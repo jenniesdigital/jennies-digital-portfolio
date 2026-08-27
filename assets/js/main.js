@@ -3,6 +3,7 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPreloader();
   initThemeToggle();
   initScrollNav();
   initMobileMenu();
@@ -11,6 +12,52 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initBlogFilter();
 });
+
+/* Preloader Controller */
+function initPreloader() {
+  const preloader = document.getElementById('sitePreloader');
+  const bar = document.getElementById('preloaderBar');
+  const percent = document.getElementById('preloaderPercent');
+  const status = document.getElementById('preloaderStatus');
+  if (!preloader) return;
+
+  let current = 0;
+  let isReady = false;
+
+  const interval = setInterval(() => {
+    if (!isReady && current < 88) {
+      current += Math.floor(Math.random() * 7) + 3;
+      if (current > 88) current = 88;
+    } else if (isReady) {
+      current += 8;
+      if (current >= 100) {
+        current = 100;
+        clearInterval(interval);
+        if (bar) bar.style.width = '100%';
+        if (percent) percent.innerText = '100%';
+        if (status) status.innerText = 'READY';
+        setTimeout(() => {
+          preloader.classList.add('loaded');
+        }, 250);
+      }
+    }
+    if (bar) bar.style.width = current + '%';
+    if (percent) percent.innerText = current + '%';
+  }, 35);
+
+  function markReady() {
+    isReady = true;
+  }
+
+  if (document.readyState === 'complete') {
+    markReady();
+  } else {
+    window.addEventListener('load', markReady);
+  }
+
+  // Safety fallback after 1.6s
+  setTimeout(markReady, 1600);
+}
 
 /* Theme Manager */
 function initThemeToggle() {

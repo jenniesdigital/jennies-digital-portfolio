@@ -630,6 +630,142 @@ button {
 }
 
 /* ==========================================================================
+   SITE PRELOADER
+   ========================================================================== */
+.site-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1), transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.5s ease;
+  pointer-events: all;
+}
+
+html.light .site-preloader {
+  background-color: #f8f9fa;
+}
+
+.site-preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  max-width: 320px;
+  width: 100%;
+}
+
+.preloader-logo-wrap {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.preloader-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  z-index: 2;
+  animation: preloader-float 1.8s ease-in-out infinite alternate;
+}
+
+.preloader-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(230, 92, 0, 0.45) 0%, rgba(230, 92, 0, 0) 70%);
+  animation: preloader-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes preloader-pulse {
+  0% { transform: scale(0.75); opacity: 0.3; }
+  50% { transform: scale(1.35); opacity: 0.9; }
+  100% { transform: scale(0.75); opacity: 0.3; }
+}
+
+@keyframes preloader-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
+
+.preloader-brand {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.preloader-bar-wrap {
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0.85rem;
+}
+
+html.light .preloader-bar-wrap {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.preloader-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--brand-orange) 0%, var(--brand-yellow) 100%);
+  box-shadow: 0 0 14px rgba(230, 92, 0, 0.7);
+  border-radius: 4px;
+  transition: width 0.12s ease-out;
+}
+
+.preloader-meta {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+}
+
+.preloader-status {
+  text-transform: uppercase;
+}
+
+.preloader-percent {
+  color: var(--brand-orange);
+  font-weight: 600;
+}
+
+/* ==========================================================================
    NAVIGATION BAR
    ========================================================================== */
 .site-header {
@@ -2154,6 +2290,7 @@ def build_js():
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initPreloader();
   initThemeToggle();
   initScrollNav();
   initMobileMenu();
@@ -2162,6 +2299,52 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyEmail();
   initBlogFilter();
 });
+
+/* Preloader Controller */
+function initPreloader() {
+  const preloader = document.getElementById('sitePreloader');
+  const bar = document.getElementById('preloaderBar');
+  const percent = document.getElementById('preloaderPercent');
+  const status = document.getElementById('preloaderStatus');
+  if (!preloader) return;
+
+  let current = 0;
+  let isReady = false;
+
+  const interval = setInterval(() => {
+    if (!isReady && current < 88) {
+      current += Math.floor(Math.random() * 7) + 3;
+      if (current > 88) current = 88;
+    } else if (isReady) {
+      current += 8;
+      if (current >= 100) {
+        current = 100;
+        clearInterval(interval);
+        if (bar) bar.style.width = '100%';
+        if (percent) percent.innerText = '100%';
+        if (status) status.innerText = 'READY';
+        setTimeout(() => {
+          preloader.classList.add('loaded');
+        }, 250);
+      }
+    }
+    if (bar) bar.style.width = current + '%';
+    if (percent) percent.innerText = current + '%';
+  }, 35);
+
+  function markReady() {
+    isReady = true;
+  }
+
+  if (document.readyState === 'complete') {
+    markReady();
+  } else {
+    window.addEventListener('load', markReady);
+  }
+
+  // Safety fallback after 1.6s
+  setTimeout(markReady, 1600);
+}
 
 /* Theme Manager */
 function initThemeToggle() {
@@ -2333,7 +2516,25 @@ function initBlogFilter() {
 # -------------------------------------------------------------
 def get_header(active_nav='home', root_prefix='', is_homepage=False):
     extra_class = '' if is_homepage else 'subpage-nav'
-    return f"""  <!-- NAVIGATION BAR (EXACT MICHAEL TSIRAKIS CLONE) -->
+    return f"""  <!-- SITE PRELOADER -->
+  <div id="sitePreloader" class="site-preloader" aria-hidden="true">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="{root_prefix}assets/logo-transparent.png" alt="Logo" class="preloader-logo">
+        <div class="preloader-pulse"></div>
+      </div>
+      <div class="preloader-brand">Jennies Digital</div>
+      <div class="preloader-bar-wrap">
+        <div id="preloaderBar" class="preloader-bar"></div>
+      </div>
+      <div class="preloader-meta">
+        <span id="preloaderStatus" class="preloader-status">INITIALIZING</span>
+        <span id="preloaderPercent" class="preloader-percent">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR (EXACT MICHAEL TSIRAKIS CLONE) -->
   <header class="site-header {extra_class}">
     <div class="nav-wrapper-outer">
       <div class="nav-bar-inner">
