@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanDesk — Jennies Digital Lab</title>
+  <link rel="icon" type="image/png" href="../assets/logo-transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,100,200..800&family=Geist+Mono:wght@400;500;600&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    (() => {
+      try {
+        const t = localStorage.getItem('jd_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        if (t === 'light') document.documentElement.classList.add('light');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <!-- NAVIGATION BAR (EXACT MICHAEL TSIRAKIS CLONE) -->
+  <header class="site-header subpage-nav">
+    <div class="nav-wrapper-outer">
+      <div class="nav-bar-inner">
+        <!-- Brand Logo & Name -->
+        <a href="../index.html" class="nav-brand" aria-label="Jennies Digital">
+          <div class="nav-logo-wrap">
+            <img src="../assets/logo-transparent.png" alt="Logo" class="nav-logo-img">
+          </div>
+          <span>Jennies Digital</span>
+        </a>
+
+        <!-- Center Menu -->
+        <nav class="nav-menu" aria-label="Primary Navigation">
+          <a href="../index.html" class="nav-link ">Home</a>
+          <a href="../work.html" class="nav-link ">Work</a>
+          <a href="../lab.html" class="nav-link active">Lab</a>
+          <a href="../blog.html" class="nav-link ">Blog</a>
+          <a href="../assets/documents/JENNIFER%20OHAERI-EHIEM%20_%20PRODUCT%20MARKETING%20MANAGER.pdf" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
+        </nav>
+
+        <!-- Right Actions: Theme Toggle & Say Hi Pill Button -->
+        <div class="nav-actions">
+          <button type="button" id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+
+          <a href="../index.html#contact" class="nav-say-hi-btn">
+            <span>Say Hi</span>
+            <span aria-hidden="true">👋</span>
+          </a>
+
+          <button type="button" id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" z2="12"></line><line x1="4" x2="20" y1="6" x2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileNavOverlay" class="mobile-nav-overlay" aria-hidden="true">
+    <a href="../index.html" class="mobile-nav-link ">Home</a>
+    <a href="../work.html" class="mobile-nav-link ">Work</a>
+    <a href="../lab.html" class="mobile-nav-link active">Lab</a>
+    <a href="../blog.html" class="mobile-nav-link ">Blog</a>
+    <a href="../assets/documents/JENNIFER%20OHAERI-EHIEM%20_%20PRODUCT%20MARKETING%20MANAGER.pdf" class="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
+    <a href="../index.html#contact" class="mobile-nav-link">Say Hi 👋</a>
+  </div>
+
+
+  <main class="page-hero">
+    <div class="container">
+      <div>
+        <a href="../lab.html" class="back-nav-btn">← Back to Lab</a>
+      </div>
+      <span class="tag-label">WEB APP · AI TOOL · 2026</span>
+      <h1 class="page-title">CleanDesk</h1>
+      <p class="page-description" style="max-width: 800px; margin: 0 0 2.5rem; color: var(--text-secondary);">An AI-powered workspace that turns messy thoughts into organized, actionable work.</p>
+      
+      <div style="display: flex; justify-content: center; margin: 3rem 0;">
+        <div class="lab-phone-frame" style="max-width: 320px; max-height: 520px;">
+          <div class="lab-phone-inner">
+            <img src="../assets/images/lab-cleandesk.png" alt="CleanDesk">
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="article-content" style="max-width: 820px; margin: 0 auto;">
+        <div class="case-study-section">
+          <h2>Watch it in action</h2>
+          <div style="position: relative; padding-bottom: 62.5%; height: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: 0 20px 40px rgba(0,0,0,0.3); margin: 1.5rem 0;">
+            <iframe src="https://www.loom.com/embed/87b49d390b3b42cda2f4e9cbaeb65e11?hide_owner=true&amp;hide_share=true&amp;hide_title=true&amp;hideEmbedTopBar=true" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h2>The idea</h2>
+          <p>I built CleanDesk around a simple observation: most productivity tools make you do the organizing first. You have to decide what something is, where it belongs, how important it is, and when it needs to happen before the tool can actually help.</p>
+          <p>I wanted to reverse that. CleanDesk starts with the mess; the thoughts, tasks, ideas, and obligations in your head, and uses AI to help make sense of them.</p>
+        </div>
+
+        <div class="case-study-section">
+          <h2>How it works</h2>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin: 1.5rem 0;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="color: var(--brand-orange); font-size: 1.1rem; margin-bottom: 0.5rem;">01 — Dump</h3>
+              <p style="margin: 0; color: var(--text-secondary);">Write down what's on your mind naturally, without worrying about structure.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="color: var(--brand-orange); font-size: 1.1rem; margin-bottom: 0.5rem;">02 — Understand</h3>
+              <p style="margin: 0; color: var(--text-secondary);">AI interprets the input and identifies projects, tasks, priorities, and dates.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="color: var(--brand-orange); font-size: 1.1rem; margin-bottom: 0.5rem;">03 — Organize</h3>
+              <p style="margin: 0; color: var(--text-secondary);">Your messy thoughts become a structured workspace you can edit and manage.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="color: var(--brand-orange); font-size: 1.1rem; margin-bottom: 0.5rem;">04 — Follow through</h3>
+              <p style="margin: 0; color: var(--text-secondary);">Use tasks, calendar integration, reminders, and productivity tracking to actually get the work done.</p>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(230, 92, 0, 0.12) 0%, rgba(247, 195, 0, 0.12) 100%); border: 1px solid rgba(230, 92, 0, 0.3); border-radius: 12px; padding: 1.25rem 1.75rem; margin: 2rem 0; text-align: center; font-weight: 600; color: var(--text-primary); font-family: var(--font-display); font-size: 1.1rem;">
+            Messy thoughts <span style="color: var(--brand-orange);">→</span> AI <span style="color: var(--brand-orange);">→</span> Organized workspace <span style="color: var(--brand-orange);">→</span> Action
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h2>The stack</h2>
+          <p><strong>Built with:</strong></p>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem;">
+            <span class="tag-pill" style="padding: 0.5rem 1rem; border-radius: 9999px; background: var(--bg-card); border: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-primary);">Vercel</span>
+            <span class="tag-pill" style="padding: 0.5rem 1rem; border-radius: 9999px; background: var(--bg-card); border: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-primary);">Supabase</span>
+            <span class="tag-pill" style="padding: 0.5rem 1rem; border-radius: 9999px; background: var(--bg-card); border: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-primary);">Antigravity</span>
+            <span class="tag-pill" style="padding: 0.5rem 1rem; border-radius: 9999px; background: var(--bg-card); border: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-primary);">Codex</span>
+            <span class="tag-pill" style="padding: 0.5rem 1rem; border-radius: 9999px; background: var(--bg-card); border: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-primary);">ChatGPT</span>
+            <span class="tag-pill" style="padding: 0.5rem 1rem; border-radius: 9999px; background: var(--bg-card); border: 1px solid var(--border-subtle); font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-primary);">Google Workspace</span>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h2>What I built</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.5rem;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">AI task organization</h3>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">Built the workflow that transforms unstructured thoughts into structured projects and tasks.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Task management</h3>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">Created task creation, priorities, deadlines, statuses, and drag-and-drop organization.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Project workspaces</h3>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">Built dedicated project spaces where users can manage tasks and keep notes in context.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Calendar integration</h3>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">Connected tasks and deadlines to the user's calendar.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Email reminders</h3>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">Built reminders to help users stay on top of upcoming work.</p>
+            </div>
+            <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 1.5rem;">
+              <h3 style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.5rem;">Productivity tracking</h3>
+              <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">Added stats that give users visibility into their activity and progress.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-study-section">
+          <h2>What I learned</h2>
+          <div style="background: var(--bg-card); border-left: 4px solid var(--brand-orange); border-radius: 0 12px 12px 0; padding: 1.75rem; margin-bottom: 1.5rem;">
+            <p style="margin: 0; color: var(--text-primary); line-height: 1.7;">
+              There are a lot of brands clamouring to add AI to their software and products. But AI is only valuable when it removes meaningful friction. Building CleanDesk taught me that the interesting question isn't <em>“Where can I add AI?”</em> It's <strong>“What work can AI actually take off the user's plate?”</strong> The core value of CleanDesk isn't that it uses AI. It's that the AI removes the cognitive effort of turning a messy brain dump into an organized plan.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); border-left: 4px solid var(--brand-yellow); border-radius: 0 12px 12px 0; padding: 1.75rem;">
+            <p style="margin: 0; color: var(--text-primary); line-height: 1.7;">
+              Building the product also changed how I think about product marketing. I had to think beyond what the product says it does and understand what is happening underneath the interface, where the user gets value, where the experience can break and what makes the product meaningfully different. The value of a product is that it solves the user's problem, not that it's fancy or 'high tech'.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER / CONTACT SECTION (COLORED SAY HELLO) -->
+  <footer id="contact" class="site-footer">
+    <div class="container-wide">
+      <a href="mailto:jennifer@jenniesdigital.com" class="footer-hero-link">
+        <span>
+          Say hello
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-arrow-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </span>
+      </a>
+
+      <div class="footer-meta-grid">
+        <div class="footer-meta-item">
+          <div class="meta-label">Email</div>
+          <a href="mailto:jennifer@jenniesdigital.com" id="copyEmailBtn" title="Click to copy email">
+            jennifer@jenniesdigital.com
+          </a>
+        </div>
+
+        <div class="footer-meta-item">
+          <div class="meta-label">Elsewhere</div>
+          <div class="footer-social-links">
+            <a href="https://www.linkedin.com/in/jennifer-ohaeri-ehiem" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://x.com/jenniesdigital" target="_blank" rel="noopener noreferrer">Twitter (X)</a>
+            <a href="https://www.instagram.com/jenniesdigital" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://substack.com/@jenniesdigital" target="_blank" rel="noopener noreferrer">Substack</a>
+          </div>
+        </div>
+
+        <div class="footer-meta-item">
+          <div class="meta-label">Local Time &amp; Status</div>
+          <p id="liveClockWidget">Lagos (GMT+1): Loading...</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>© 2026 Jennies Digital · Designed &amp; built with passion.</span>
+        <span class="status-badge-live">
+          🟢 Available for PMM roles and projects
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
