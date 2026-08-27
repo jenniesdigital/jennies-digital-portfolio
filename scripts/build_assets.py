@@ -3335,52 +3335,34 @@ def build_work_pages():
         <span><strong>Disclaimer:</strong> Please note that this is just a mock project and is not affiliated with the brand itself.</span>
       </div>
 
-      <!-- RESOURCES SECTION (RESEARCH & STRATEGY BENCHMARKS) -->
+      <!-- RESOURCES SECTION (OFFICIAL PLATFORM & MOCK REDESIGN) -->
       <div class="cs-resources-box">
         <div class="cs-resources-header">
           <div class="cs-resources-title">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>Project Resources &amp; Benchmark References</span>
+            <span>Project Resources &amp; Live Links</span>
           </div>
-          <span class="cs-resources-badge">4 References</span>
+          <span class="cs-resources-badge">2 Resources</span>
         </div>
-        <p class="cs-resources-desc">Explore the live platforms, regulatory filings, and customer review datasets analyzed for this positioning teardown:</p>
+        <p class="cs-resources-desc">Compare the original live OPay platform with the interactive redesigned homepage prototype:</p>
         
         <div class="cs-resources-grid">
-          <a href="https://opayweb.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+          <a href="https://www.opayweb.com/" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
             <div class="cs-resource-icon">🌐</div>
             <div class="cs-resource-info">
               <span class="cs-resource-name">OPay Official Website &amp; App</span>
-              <span class="cs-resource-tag">Live Platform · Baseline Homepage Teardown</span>
+              <span class="cs-resource-tag">Live Platform · Baseline Product (opayweb.com)</span>
             </div>
             <span class="cs-resource-arrow">↗</span>
           </a>
 
-          <a href="https://www.cbn.gov.ng" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
-            <div class="cs-resource-icon">🏛️</div>
+          <a href="https://opay-nigeria-mock.vercel.app/" target="_blank" rel="noopener noreferrer" class="cs-resource-item" style="border-color: var(--brand-orange); background: var(--brand-orange-light);">
+            <div class="cs-resource-icon">🚀</div>
             <div class="cs-resource-info">
-              <span class="cs-resource-name">Central Bank of Nigeria (CBN)</span>
-              <span class="cs-resource-tag">Regulatory · Mobile Money Operator &amp; MFB Licensing</span>
+              <span class="cs-resource-name" style="color: var(--brand-orange);">Rewritten OPay Mock Landing Page</span>
+              <span class="cs-resource-tag">Live Prototype · Positioning Redesign (opay-nigeria-mock.vercel.app)</span>
             </div>
-            <span class="cs-resource-arrow">↗</span>
-          </a>
-
-          <a href="https://liners.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
-            <div class="cs-resource-icon">⭐</div>
-            <div class="cs-resource-info">
-              <span class="cs-resource-name">Liners Customer Feedback Dataset</span>
-              <span class="cs-resource-tag">Market Data · 135+ Speed &amp; Reliability User Reviews</span>
-            </div>
-            <span class="cs-resource-arrow">↗</span>
-          </a>
-
-          <a href="https://sec.gov.ng" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
-            <div class="cs-resource-icon">📈</div>
-            <div class="cs-resource-info">
-              <span class="cs-resource-name">SEC Nigeria · OWealth Architecture</span>
-              <span class="cs-resource-tag">Financial Architecture · Money Market Fund Framework</span>
-            </div>
-            <span class="cs-resource-arrow">↗</span>
+            <span class="cs-resource-arrow" style="color: var(--brand-orange);">↗</span>
           </a>
         </div>
       </div>
@@ -4153,11 +4135,20 @@ def build_work_pages():
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
             <span>Project Resources &amp; Strategic Documents</span>
           </div>
-          <span class="cs-resources-badge">6 Documents</span>
+          <span class="cs-resources-badge">7 Deliverables</span>
         </div>
-        <p class="cs-resources-desc">Explore the complete collection of product marketing deliverables, research reports, and frameworks created for this project:</p>
+        <p class="cs-resources-desc">Explore the complete collection of product marketing deliverables, research reports, mock landing page, and frameworks created for this project:</p>
         
         <div class="cs-resources-grid">
+          <a href="https://koppoh-finance.vercel.app" target="_blank" rel="noopener noreferrer" class="cs-resource-item" style="border-color: var(--brand-orange); background: var(--brand-orange-light);">
+            <div class="cs-resource-icon">🌐</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name" style="color: var(--brand-orange);">Mock Koppoh Finance Website</span>
+              <span class="cs-resource-tag">Live Prototype · Interactive Redesign (koppoh-finance.vercel.app)</span>
+            </div>
+            <span class="cs-resource-arrow" style="color: var(--brand-orange);">↗</span>
+          </a>
+
           <a href="../assets/documents/Koppoh%20Finance%20-%20Product%20One%20Pager.pdf" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
             <div class="cs-resource-icon">📄</div>
             <div class="cs-resource-info">
@@ -4574,50 +4565,23 @@ def build_work_pages():
         <span><strong>Disclaimer:</strong> Please note that this is just a mock project and is not affiliated with the brand itself.</span>
       </div>
 
-      <!-- RESOURCES SECTION (MARKET RESEARCH & BENCHMARK REFERENCES) -->
+      <!-- RESOURCES SECTION (OFFICIAL PLATFORM REFERENCE) -->
       <div class="cs-resources-box">
         <div class="cs-resources-header">
           <div class="cs-resources-title">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            <span>Project Resources &amp; Industry References</span>
+            <span>Project Resources &amp; Industry Reference</span>
           </div>
-          <span class="cs-resources-badge">4 References</span>
+          <span class="cs-resources-badge">1 Resource</span>
         </div>
-        <p class="cs-resources-desc">Explore the market intelligence reports, financial filings, and product benchmarks referenced in this strategy case study:</p>
+        <p class="cs-resources-desc">Explore the baseline official messaging platform referenced in this product marketing case study:</p>
         
-        <div class="cs-resources-grid">
+        <div class="cs-resources-grid" style="grid-template-columns: 1fr;">
           <a href="https://www.whatsapp.com/about" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
             <div class="cs-resource-icon">💬</div>
             <div class="cs-resource-info">
               <span class="cs-resource-name">WhatsApp Official Platform</span>
-              <span class="cs-resource-tag">Product Architecture · SMS Replacement &amp; E2E Baseline</span>
-            </div>
-            <span class="cs-resource-arrow">↗</span>
-          </a>
-
-          <a href="https://investor.fb.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
-            <div class="cs-resource-icon">📊</div>
-            <div class="cs-resource-info">
-              <span class="cs-resource-name">Meta Platforms SEC Filings</span>
-              <span class="cs-resource-tag">Financial Data · WhatsApp Business API $3.54B Run Rate</span>
-            </div>
-            <span class="cs-resource-arrow">↗</span>
-          </a>
-
-          <a href="https://www.grandviewresearch.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
-            <div class="cs-resource-icon">📈</div>
-            <div class="cs-resource-info">
-              <span class="cs-resource-name">Grand View Research Report</span>
-              <span class="cs-resource-tag">Market Intelligence · $85.2B Team Collaboration Market</span>
-            </div>
-            <span class="cs-resource-arrow">↗</span>
-          </a>
-
-          <a href="https://www.blackhat.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
-            <div class="cs-resource-icon">🔒</div>
-            <div class="cs-resource-info">
-              <span class="cs-resource-name">Black Hat Security Research</span>
-              <span class="cs-resource-tag">Security &amp; Privacy · Enterprise E2E Encryption Analysis</span>
+              <span class="cs-resource-tag">Official Product &amp; Mission · SMS Replacement &amp; E2E Baseline (whatsapp.com/about)</span>
             </div>
             <span class="cs-resource-arrow">↗</span>
           </a>
