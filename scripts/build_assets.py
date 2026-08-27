@@ -877,9 +877,10 @@ html.light .site-header.subpage-nav .nav-bar-inner {
   gap: 0.5rem;
 }
 
-.theme-toggle-btn {
-  width: 34px;
-  height: 34px;
+.theme-toggle-btn,
+.mobile-menu-btn {
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-full);
   display: inline-flex;
   align-items: center;
@@ -888,21 +889,30 @@ html.light .site-header.subpage-nav .nav-bar-inner {
   border: 1px solid var(--border-medium);
   background: var(--bg-surface-elevated);
   cursor: pointer;
-  transition: all 0.2s ease;
+  padding: 0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
 }
 
-.theme-toggle-btn svg {
-  width: 17px;
-  height: 17px;
+.theme-toggle-btn svg,
+.mobile-menu-btn svg {
+  width: 18px;
+  height: 18px;
   display: block;
   stroke: currentColor;
   stroke-width: 2.2;
 }
 
-.theme-toggle-btn:hover {
+.theme-toggle-btn:hover,
+.mobile-menu-btn:hover {
   color: var(--brand-orange);
   border-color: var(--brand-orange);
   background: var(--brand-orange-light);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-btn {
+  display: none;
 }
 
 .nav-say-hi-btn {
@@ -910,6 +920,7 @@ html.light .site-header.subpage-nav .nav-bar-inner {
   align-items: center;
   gap: 0.35rem;
   padding: 0.35rem 0.85rem;
+  height: 36px;
   border-radius: var(--radius-full);
   font-size: 0.875rem;
   font-weight: 500;
@@ -923,22 +934,11 @@ html.light .site-header.subpage-nav .nav-bar-inner {
   border-color: var(--brand-orange);
   background: var(--brand-orange-light);
   color: #ffffff;
+  transform: translateY(-1px);
 }
 
 html.light .nav-say-hi-btn:hover {
   color: var(--brand-orange);
-}
-
-.mobile-menu-btn {
-  display: none;
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-full);
-  align-items: center;
-  justify-content: center;
-  color: var(--text-primary);
-  background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-subtle);
 }
 
 .mobile-nav-overlay {
@@ -2493,8 +2493,8 @@ function updateThemeIcon(isLight) {
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   if (!themeToggleBtn) return;
   themeToggleBtn.innerHTML = isLight
-    ? `<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 0 1 1-9-9Z"></path></svg>`
-    : `<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+    ? `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`
+    : `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="1.5" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22.5"></line><line x1="4.22" y1="4.22" x2="6" y2="6"></line><line x1="18" y1="18" x2="19.78" y2="19.78"></line><line x1="1.5" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22.5" y2="12"></line><line x1="4.22" y1="19.78" x2="6" y2="18"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
 }
 
 /* Seamless Scroll Nav Transition */
@@ -2523,8 +2523,8 @@ function initMobileMenu() {
   btn.addEventListener('click', () => {
     const isOpen = overlay.classList.toggle('open');
     btn.innerHTML = isOpen
-      ? `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`
-      : `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" x2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>`;
+      ? `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`
+      : `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3.5" y1="6.5" x2="20.5" y2="6.5"></line><line x1="3.5" y1="12" x2="20.5" y2="12"></line><line x1="3.5" y1="17.5" x2="20.5" y2="17.5"></line></svg>`;
   });
 }
 
@@ -2679,7 +2679,7 @@ def get_header(active_nav='home', root_prefix='', is_homepage=False):
         <!-- Right Actions: Theme Toggle & Say Hi Pill Button -->
         <div class="nav-actions">
           <button type="button" id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
-            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="1.5" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22.5"></line><line x1="4.22" y1="4.22" x2="6" y2="6"></line><line x1="18" y1="18" x2="19.78" y2="19.78"></line><line x1="1.5" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22.5" y2="12"></line><line x1="4.22" y1="19.78" x2="6" y2="18"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           </button>
 
           <a href="{root_prefix}index.html#contact" class="nav-say-hi-btn">
@@ -2688,7 +2688,7 @@ def get_header(active_nav='home', root_prefix='', is_homepage=False):
           </a>
 
           <button type="button" id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Open mobile menu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" z2="12"></line><line x1="4" x2="20" y1="6" x2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="3.5" y1="6.5" x2="20.5" y2="6.5"></line><line x1="3.5" y1="12" x2="20.5" y2="12"></line><line x1="3.5" y1="17.5" x2="20.5" y2="17.5"></line></svg>
           </button>
         </div>
       </div>
