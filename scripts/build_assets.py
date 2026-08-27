@@ -1891,6 +1891,20 @@ html.light .status-badge-live {
 }
 
 @media (max-width: 768px) {
+  /* Navigation */
+  .nav-wrapper-outer {
+    padding: 8px 0.75rem 0;
+  }
+
+  .nav-bar-inner {
+    padding: 8px 12px;
+  }
+
+  .nav-brand {
+    font-size: 0.95rem;
+    gap: 0.35rem;
+  }
+
   .nav-menu,
   .nav-say-hi-btn {
     display: none;
@@ -1900,23 +1914,230 @@ html.light .status-badge-live {
     display: flex;
   }
 
+  /* Section Headers */
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-title,
+  .labs-title {
+    font-size: clamp(2.1rem, 8vw, 2.75rem);
+    line-height: 1.12;
+  }
+
+  .section-subtitle {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: left;
+  }
+
+  /* Hero Section */
   .hero-section {
-    padding-top: 6rem;
-    padding-bottom: 4rem;
+    min-height: calc(100vh - 20px);
+    padding-top: 5rem;
+    padding-bottom: 2.75rem;
+    justify-content: flex-end;
   }
 
   .hero-title {
-    font-size: 2.35rem;
+    font-size: clamp(2.1rem, 8.2vw, 3rem);
+    line-height: 1.1;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
   }
 
-  .footer-bottom-row {
+  .hero-cta-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .btn-primary-hero,
+  .btn-secondary-hero {
+    flex: 1;
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Work Grid & Cards */
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .work-card {
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+
+  .work-card-media {
+    height: 240px;
+  }
+
+  .work-card-meta {
+    padding: 1.5rem 1.25rem 1.75rem;
+    gap: 0.6rem;
+  }
+
+  .work-title {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  .work-description {
+    font-size: 0.925rem;
+    line-height: 1.5;
+  }
+
+  .work-meta-header {
+    font-size: 0.75rem;
+  }
+
+  /* Labs Section */
+  .labs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .lab-card {
+    padding: 1.75rem 1.25rem 1.5rem;
+  }
+
+  .lab-phone-frame {
+    max-width: 250px;
+    height: 380px;
+  }
+
+  /* About Section */
+  .section-about {
+    padding: 4rem 0;
+  }
+
+  .scroll-color-text {
+    font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+    line-height: 1.45;
+  }
+
+  .about-pills-row {
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .about-badge-pill {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .about-sidebar-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+  }
+
+  .about-cta-group {
+    width: 100%;
     flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .btn-about-primary,
+  .btn-about-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Page Headers for subpages */
+  .page-hero {
+    padding-top: 7rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 7.8vw, 2.85rem);
+    line-height: 1.15;
+  }
+
+  .page-description {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* Blog Filter Tabs Horizontal Scroll */
+  .blog-filter-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .blog-tab-btn {
+    flex-shrink: 0;
+  }
+
+  /* Case study detail tables and pillars */
+  .cs-comparison-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
   }
 
   .cs-pillar-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-hero-link {
+    font-size: clamp(2.75rem, 12vw, 5rem);
+  }
+
+  .footer-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    padding: 2.5rem 0;
+  }
+
+  .footer-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+  }
+
+  .btn-primary-hero,
+  .btn-secondary-hero {
+    width: 100%;
+  }
+
+  .work-card-media {
+    height: 200px;
   }
 }
 """
