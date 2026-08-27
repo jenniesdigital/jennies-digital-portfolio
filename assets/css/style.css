@@ -1407,9 +1407,130 @@ html.light .status-badge-live {
   border: 1px solid rgba(247, 195, 0, 0.3);
   border-radius: var(--radius-md);
   padding: 1.15rem 1.65rem;
-  margin: 1.5rem 0 4rem;
+  margin: 1.5rem 0 2rem;
   font-size: 0.9375rem;
   color: var(--text-secondary);
+}
+
+.cs-resources-box {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  margin: 1.75rem 0 4rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.cs-resources-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cs-resources-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cs-resources-title svg {
+  color: var(--brand-orange);
+}
+
+.cs-resources-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--brand-orange-light);
+  color: var(--brand-orange);
+  border: 1px solid var(--brand-orange);
+}
+
+.cs-resources-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cs-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .cs-resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cs-resource-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.cs-resource-item:hover {
+  border-color: var(--brand-orange);
+  background: var(--bg-surface-elevated);
+  transform: translateY(-2px);
+}
+
+.cs-resource-icon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.cs-resource-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-grow: 1;
+}
+
+.cs-resource-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.cs-resource-item:hover .cs-resource-name {
+  color: var(--brand-orange);
+}
+
+.cs-resource-tag {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-muted);
+}
+
+.cs-resource-arrow {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cs-resource-item:hover .cs-resource-arrow {
+  transform: translate(2px, -2px);
+  color: var(--brand-orange);
 }
 
 .cs-insight-card {

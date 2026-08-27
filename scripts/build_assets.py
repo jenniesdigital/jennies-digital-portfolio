@@ -1883,9 +1883,130 @@ html.light .status-badge-live {
   border: 1px solid rgba(247, 195, 0, 0.3);
   border-radius: var(--radius-md);
   padding: 1.15rem 1.65rem;
-  margin: 1.5rem 0 4rem;
+  margin: 1.5rem 0 2rem;
   font-size: 0.9375rem;
   color: var(--text-secondary);
+}
+
+.cs-resources-box {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  margin: 1.75rem 0 4rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.cs-resources-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cs-resources-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cs-resources-title svg {
+  color: var(--brand-orange);
+}
+
+.cs-resources-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  background: var(--brand-orange-light);
+  color: var(--brand-orange);
+  border: 1px solid var(--brand-orange);
+}
+
+.cs-resources-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.cs-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .cs-resources-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cs-resource-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.cs-resource-item:hover {
+  border-color: var(--brand-orange);
+  background: var(--bg-surface-elevated);
+  transform: translateY(-2px);
+}
+
+.cs-resource-icon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.cs-resource-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex-grow: 1;
+}
+
+.cs-resource-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.cs-resource-item:hover .cs-resource-name {
+  color: var(--brand-orange);
+}
+
+.cs-resource-tag {
+  font-family: var(--font-mono);
+  font-size: 0.725rem;
+  color: var(--text-muted);
+}
+
+.cs-resource-arrow {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cs-resource-item:hover .cs-resource-arrow {
+  transform: translate(2px, -2px);
+  color: var(--brand-orange);
 }
 
 .cs-insight-card {
@@ -3214,8 +3335,58 @@ def build_work_pages():
         <span><strong>Disclaimer:</strong> Please note that this is just a mock project and is not affiliated with the brand itself.</span>
       </div>
 
+      <!-- RESOURCES SECTION (RESEARCH & STRATEGY BENCHMARKS) -->
+      <div class="cs-resources-box">
+        <div class="cs-resources-header">
+          <div class="cs-resources-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Project Resources &amp; Benchmark References</span>
+          </div>
+          <span class="cs-resources-badge">4 References</span>
+        </div>
+        <p class="cs-resources-desc">Explore the live platforms, regulatory filings, and customer review datasets analyzed for this positioning teardown:</p>
+        
+        <div class="cs-resources-grid">
+          <a href="https://opayweb.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">🌐</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">OPay Official Website &amp; App</span>
+              <span class="cs-resource-tag">Live Platform · Baseline Homepage Teardown</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="https://www.cbn.gov.ng" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">🏛️</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Central Bank of Nigeria (CBN)</span>
+              <span class="cs-resource-tag">Regulatory · Mobile Money Operator &amp; MFB Licensing</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="https://liners.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">⭐</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Liners Customer Feedback Dataset</span>
+              <span class="cs-resource-tag">Market Data · 135+ Speed &amp; Reliability User Reviews</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="https://sec.gov.ng" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">📈</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">SEC Nigeria · OWealth Architecture</span>
+              <span class="cs-resource-tag">Financial Architecture · Money Market Fund Framework</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
       <!-- EDITORIAL CONTENT -->
-      <div class="article-content" style="margin-top: 4.5rem;">
+      <div class="article-content" style="margin-top: 2rem;">
         
         <h2>01. The challenge</h2>
         <p>
@@ -3975,8 +4146,76 @@ def build_work_pages():
         <span><strong>Disclaimer:</strong> Please note that this is just a mock project and is not affiliated with the brand itself.</span>
       </div>
 
+      <!-- RESOURCES SECTION (ALL PROJECT DELIVERABLES & STRATEGY DOCUMENTS) -->
+      <div class="cs-resources-box">
+        <div class="cs-resources-header">
+          <div class="cs-resources-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Project Resources &amp; Strategic Documents</span>
+          </div>
+          <span class="cs-resources-badge">6 Documents</span>
+        </div>
+        <p class="cs-resources-desc">Explore the complete collection of product marketing deliverables, research reports, and frameworks created for this project:</p>
+        
+        <div class="cs-resources-grid">
+          <a href="../assets/documents/Koppoh%20Finance%20-%20Product%20One%20Pager.pdf" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">📄</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Product One-Pager Document</span>
+              <span class="cs-resource-tag">PDF · Feature &amp; Capability Architecture</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="../assets/documents/The%20Koppoh%20Finance%20Customer.pdf" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">🎯</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Customer Discovery &amp; Personas</span>
+              <span class="cs-resource-tag">PDF · Field Insights &amp; Trust Analysis</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="../assets/documents/Koppoh%20Finance%20--%20Market%20%26%20Competitive%20Research.pdf" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">📊</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Market &amp; Competitive Research</span>
+              <span class="cs-resource-tag">PDF · $32.2B Financing Gap Teardown</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="../assets/documents/Koppoh%20Finance%20Positioning%20Document.pdf" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">🧭</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Positioning Document</span>
+              <span class="cs-resource-tag">PDF · Category Framing &amp; Strategic Slot</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="../assets/documents/Koppoh%20Finance%20Messaging%20Framework.pdf" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">💬</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Messaging Framework</span>
+              <span class="cs-resource-tag">PDF · 3 Strategic Pillars &amp; Proof Points</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="../assets/documents/Go-To-Market%20Strategy%20for%20Koppoh%20Finance%20(1).pdf" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">🚀</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Go-To-Market Launch Strategy</span>
+              <span class="cs-resource-tag">PDF · Full 5-Stage GTM Architecture</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
       <!-- EDITORIAL CONTENT -->
-      <div class="article-content" style="margin-top: 4.5rem;">
+      <div class="article-content" style="margin-top: 2rem;">
         
         <h2>What is Koppoh?</h2>
         <p>
@@ -4335,8 +4574,58 @@ def build_work_pages():
         <span><strong>Disclaimer:</strong> Please note that this is just a mock project and is not affiliated with the brand itself.</span>
       </div>
 
+      <!-- RESOURCES SECTION (MARKET RESEARCH & BENCHMARK REFERENCES) -->
+      <div class="cs-resources-box">
+        <div class="cs-resources-header">
+          <div class="cs-resources-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            <span>Project Resources &amp; Industry References</span>
+          </div>
+          <span class="cs-resources-badge">4 References</span>
+        </div>
+        <p class="cs-resources-desc">Explore the market intelligence reports, financial filings, and product benchmarks referenced in this strategy case study:</p>
+        
+        <div class="cs-resources-grid">
+          <a href="https://www.whatsapp.com/about" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">💬</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">WhatsApp Official Platform</span>
+              <span class="cs-resource-tag">Product Architecture · SMS Replacement &amp; E2E Baseline</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="https://investor.fb.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">📊</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Meta Platforms SEC Filings</span>
+              <span class="cs-resource-tag">Financial Data · WhatsApp Business API $3.54B Run Rate</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="https://www.grandviewresearch.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">📈</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Grand View Research Report</span>
+              <span class="cs-resource-tag">Market Intelligence · $85.2B Team Collaboration Market</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+
+          <a href="https://www.blackhat.com" target="_blank" rel="noopener noreferrer" class="cs-resource-item">
+            <div class="cs-resource-icon">🔒</div>
+            <div class="cs-resource-info">
+              <span class="cs-resource-name">Black Hat Security Research</span>
+              <span class="cs-resource-tag">Security &amp; Privacy · Enterprise E2E Encryption Analysis</span>
+            </div>
+            <span class="cs-resource-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+
       <!-- EDITORIAL CONTENT -->
-      <div class="article-content" style="margin-top: 4.5rem;">
+      <div class="article-content" style="margin-top: 2rem;">
         
         <h2>The challenge</h2>
         <p>
