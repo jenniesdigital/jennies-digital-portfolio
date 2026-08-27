@@ -2679,7 +2679,7 @@ def build_index():
             muted 
             loop 
             playsinline 
-            poster="assets/images/jennifer-step4.jpg">
+            poster="assets/images/hero-poster.jpg">
             <source src="assets/images/new-hero-character.mp4" type="video/mp4">
           </video>
         </div>
