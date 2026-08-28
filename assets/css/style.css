@@ -1152,7 +1152,7 @@ html.light .about-badge-pill {
 .blog-card-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border-subtle);
   font-size: 0.875rem;

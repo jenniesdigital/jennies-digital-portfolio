@@ -1628,7 +1628,7 @@ html.light .about-badge-pill {
 .blog-card-footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border-subtle);
   font-size: 0.875rem;
@@ -3120,7 +3120,7 @@ def build_index():
             <h2 class="section-title">Subject Matter</h2>
           </div>
           <p class="section-subtitle">
-            Perspectives on Technology, Business, Law, Books, Ideas, People, and Culture.
+            My perspectives on technology, business, law, people, and things I find remotely interesting.
           </p>
         </div>
 
@@ -3143,7 +3143,6 @@ def build_index():
               </p>
             </div>
             <div class="blog-card-footer">
-              <span>Read essay</span>
               <a href="/blog/the-death-of-feature-first-messaging" class="read-more-link">
                 Full read
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -3169,7 +3168,6 @@ def build_index():
               </p>
             </div>
             <div class="blog-card-footer">
-              <span>Read research</span>
               <a href="/blog/why-most-ai-saas-launches-fail" class="read-more-link">
                 Full read
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -6280,7 +6278,7 @@ def build_blog_pages():
       <span class="tag-label">Blog &amp; Insights</span>
       <h1 class="page-title">Subject Matter</h1>
       <p class="page-description">
-        Perspectives on Technology, Business, Law, Books, Ideas, People, and Culture.
+        My perspectives on technology, business, law, people, and things I find remotely interesting.
       </p>
 
       <div class="blog-filter-tabs" style="margin-top: 2.5rem;">
@@ -6310,7 +6308,6 @@ def build_blog_pages():
             <p class="blog-card-excerpt">{a['excerpt']}</p>
           </div>
           <div class="blog-card-footer">
-            <span>Read {a['tag'].lower()}</span>
             <a href="/blog/{a['slug']}" class="read-more-link">
               Full read
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
