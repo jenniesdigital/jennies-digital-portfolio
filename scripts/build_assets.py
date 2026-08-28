@@ -2669,7 +2669,7 @@ def get_header(active_nav='home', root_prefix='', is_homepage=False):
     <div class="nav-wrapper-outer">
       <div class="nav-bar-inner">
         <!-- Brand Logo & Name -->
-        <a href="{root_prefix}index.html" class="nav-brand" aria-label="Jennies Digital">
+        <a href="/" class="nav-brand" aria-label="Jennies Digital">
           <div class="nav-logo-wrap">
             <img src="{root_prefix}assets/logo-transparent.png" alt="Logo" class="nav-logo-img">
           </div>
@@ -2678,10 +2678,10 @@ def get_header(active_nav='home', root_prefix='', is_homepage=False):
 
         <!-- Center Menu -->
         <nav class="nav-menu" aria-label="Primary Navigation">
-          <a href="{root_prefix}index.html" class="nav-link {'active' if active_nav=='home' else ''}">Home</a>
-          <a href="{root_prefix}work.html" class="nav-link {'active' if active_nav=='work' else ''}">Work</a>
-          <a href="{root_prefix}lab.html" class="nav-link {'active' if active_nav=='lab' else ''}">Lab</a>
-          <a href="{root_prefix}blog.html" class="nav-link {'active' if active_nav=='blog' else ''}">Blog</a>
+          <a href="/" class="nav-link {'active' if active_nav=='home' else ''}">Home</a>
+          <a href="/work" class="nav-link {'active' if active_nav=='work' else ''}">Work</a>
+          <a href="/lab" class="nav-link {'active' if active_nav=='lab' else ''}">Lab</a>
+          <a href="/blog" class="nav-link {'active' if active_nav=='blog' else ''}">Blog</a>
           <a href="{root_prefix}assets/documents/JENNIFER%20OHAERI-EHIEM%20_%20PRODUCT%20MARKETING%20MANAGER.pdf" class="nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
         </nav>
 
@@ -2691,7 +2691,7 @@ def get_header(active_nav='home', root_prefix='', is_homepage=False):
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"></circle><line x1="12" y1="1.5" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22.5"></line><line x1="4.22" y1="4.22" x2="6" y2="6"></line><line x1="18" y1="18" x2="19.78" y2="19.78"></line><line x1="1.5" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22.5" y2="12"></line><line x1="4.22" y1="19.78" x2="6" y2="18"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           </button>
 
-          <a href="{root_prefix}index.html#contact" class="nav-say-hi-btn">
+          <a href="/#contact" class="nav-say-hi-btn">
             <span>Say Hi</span>
             <span aria-hidden="true">👋</span>
           </a>
@@ -2706,12 +2706,12 @@ def get_header(active_nav='home', root_prefix='', is_homepage=False):
 
   <!-- Mobile Menu Overlay -->
   <div id="mobileNavOverlay" class="mobile-nav-overlay" aria-hidden="true">
-    <a href="{root_prefix}index.html" class="mobile-nav-link {'active' if active_nav=='home' else ''}">Home</a>
-    <a href="{root_prefix}work.html" class="mobile-nav-link {'active' if active_nav=='work' else ''}">Work</a>
-    <a href="{root_prefix}lab.html" class="mobile-nav-link {'active' if active_nav=='lab' else ''}">Lab</a>
-    <a href="{root_prefix}blog.html" class="mobile-nav-link {'active' if active_nav=='blog' else ''}">Blog</a>
+    <a href="/" class="mobile-nav-link {'active' if active_nav=='home' else ''}">Home</a>
+    <a href="/work" class="mobile-nav-link {'active' if active_nav=='work' else ''}">Work</a>
+    <a href="/lab" class="mobile-nav-link {'active' if active_nav=='lab' else ''}">Lab</a>
+    <a href="/blog" class="mobile-nav-link {'active' if active_nav=='blog' else ''}">Blog</a>
     <a href="{root_prefix}assets/documents/JENNIFER%20OHAERI-EHIEM%20_%20PRODUCT%20MARKETING%20MANAGER.pdf" class="mobile-nav-link" target="_blank" rel="noopener noreferrer">Resume</a>
-    <a href="{root_prefix}index.html#contact" class="mobile-nav-link">Say Hi 👋</a>
+    <a href="/#contact" class="mobile-nav-link">Say Hi 👋</a>
   </div>
 """
 
@@ -2851,7 +2851,7 @@ def build_index():
 
         <div class="work-grid">
           <!-- Case Study 1: Koppoh Finance -->
-          <a href="work/koppoh.html" class="work-card">
+          <a href="/work/koppoh" class="work-card">
             <div class="work-card-media">
               <img src="assets/images/work-koppoh-ipad.png" alt="Launching Koppoh Finance Case Study" class="work-card-img" loading="lazy">
             </div>
@@ -2873,7 +2873,7 @@ def build_index():
           </a>
 
           <!-- Case Study 2: WhatsApp Teams -->
-          <a href="work/whatsapp.html" class="work-card">
+          <a href="/work/whatsapp" class="work-card">
             <div class="work-card-media">
               <img src="assets/images/work-whatsapp-laptop.png" alt="WhatsApp Teams Case Study" class="work-card-img" loading="lazy">
             </div>
@@ -2895,7 +2895,7 @@ def build_index():
           </a>
 
           <!-- Case Study 3: OPay Positioning -->
-          <a href="work/opay.html" class="work-card">
+          <a href="/work/opay" class="work-card">
             <div class="work-card-media">
               <img src="assets/images/work-opay-tablet.png" alt="OPay: Beyond Beyond Banking Case Study" class="work-card-img" loading="lazy">
             </div>
@@ -2917,7 +2917,7 @@ def build_index():
           </a>
 
           <!-- Case Study 4: Africa's Creator Monetisation Landscape -->
-          <a href="work/creator-monetisation.html" class="work-card">
+          <a href="/work/creator-monetisation" class="work-card">
             <div class="work-card-media">
               <img src="assets/images/work-creator-monetisation.png" alt="Africa's Creator Monetisation Landscape" class="work-card-img" loading="lazy">
             </div>
@@ -2959,7 +2959,7 @@ def build_index():
 
         <div class="labs-grid">
           <!-- Lab 1: CleanDesk -->
-          <a href="lab/cleandesk.html" class="lab-card">
+          <a href="/lab/cleandesk" class="lab-card">
             <div class="lab-phone-frame">
               <div class="lab-phone-inner">
                 <img src="assets/images/lab-cleandesk.png" alt="CleanDesk App" loading="lazy">
@@ -2976,7 +2976,7 @@ def build_index():
           </a>
 
           <!-- Lab 2: Soda Reader -->
-          <a href="lab/soda-reader.html" class="lab-card">
+          <a href="/lab/soda-reader" class="lab-card">
             <div class="lab-phone-frame">
               <div class="lab-phone-inner">
                 <img src="assets/images/lab-soda.png" alt="Soda Reader App" loading="lazy">
@@ -2993,7 +2993,7 @@ def build_index():
           </a>
 
           <!-- Lab 3: ContentLabAI -->
-          <a href="lab/contentlabai.html" class="lab-card">
+          <a href="/lab/contentlabai" class="lab-card">
             <div class="lab-phone-frame">
               <div class="lab-phone-inner">
                 <img src="assets/images/lab-contentlabai.png" alt="ContentLabAI App" loading="lazy">
@@ -3082,7 +3082,7 @@ def build_index():
             </div>
             <div class="blog-card-footer">
               <span>Read article</span>
-              <a href="blog/the-death-of-feature-first-messaging.html" class="read-more-link">
+              <a href="/blog/the-death-of-feature-first-messaging" class="read-more-link">
                 Full read
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
@@ -3105,7 +3105,7 @@ def build_index():
             </div>
             <div class="blog-card-footer">
               <span>Read article</span>
-              <a href="blog/why-most-ai-saas-launches-fail.html" class="read-more-link">
+              <a href="/blog/why-most-ai-saas-launches-fail" class="read-more-link">
                 Full read
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
@@ -3173,7 +3173,7 @@ def build_work_pages():
 
       <div class="work-grid" style="margin-top: 3.5rem;">
         <!-- Koppoh Finance -->
-        <a href="work/koppoh.html" class="work-card">
+        <a href="/work/koppoh" class="work-card">
           <div class="work-card-media">
             <img src="assets/images/work-koppoh-ipad.png" alt="Launching Koppoh Finance" class="work-card-img">
           </div>
@@ -3193,7 +3193,7 @@ def build_work_pages():
         </a>
 
         <!-- WhatsApp Teams -->
-        <a href="work/whatsapp.html" class="work-card">
+        <a href="/work/whatsapp" class="work-card">
           <div class="work-card-media">
             <img src="assets/images/work-whatsapp-laptop.png" alt="WhatsApp Teams" class="work-card-img">
           </div>
@@ -3213,7 +3213,7 @@ def build_work_pages():
         </a>
 
         <!-- OPay Positioning -->
-        <a href="work/opay.html" class="work-card">
+        <a href="/work/opay" class="work-card">
           <div class="work-card-media">
             <img src="assets/images/work-opay-tablet.png" alt="OPay: Beyond Beyond Banking" class="work-card-img">
           </div>
@@ -3233,7 +3233,7 @@ def build_work_pages():
         </a>
 
         <!-- Case Study 4: Africa's Creator Monetisation Landscape -->
-        <a href="work/creator-monetisation.html" class="work-card">
+        <a href="/work/creator-monetisation" class="work-card">
           <div class="work-card-media">
             <img src="assets/images/work-creator-monetisation.png" alt="Africa's Creator Monetisation Landscape" class="work-card-img">
           </div>
@@ -3296,7 +3296,7 @@ def build_work_pages():
   <main class="page-hero">
     <div class="container">
       <div>
-        <a href="../work.html" class="back-nav-btn">← Back to Selected Work</a>
+        <a href="/work" class="back-nav-btn">← Back to Selected Work</a>
       </div>
 
       <div class="cs-header" style="margin-top: 1rem; margin-bottom: 3.5rem;">
@@ -4089,7 +4089,7 @@ def build_work_pages():
   <main class="page-hero">
     <div class="container">
       <div>
-        <a href="../work.html" class="back-nav-btn">← Back to Selected Work</a>
+        <a href="/work" class="back-nav-btn">← Back to Selected Work</a>
       </div>
 
       <div class="cs-header" style="margin-top: 1rem; margin-bottom: 3.5rem;">
@@ -4526,7 +4526,7 @@ def build_work_pages():
   <main class="page-hero">
     <div class="container">
       <div>
-        <a href="../work.html" class="back-nav-btn">← Back to Selected Work</a>
+        <a href="/work" class="back-nav-btn">← Back to Selected Work</a>
       </div>
 
       <div class="cs-header" style="margin-top: 1rem; margin-bottom: 3.5rem;">
@@ -5141,7 +5141,7 @@ def build_work_pages():
   <main class="page-hero">
     <div class="container">
       <div>
-        <a href="../work.html" class="back-nav-btn">← Back to Selected Work</a>
+        <a href="/work" class="back-nav-btn">← Back to Selected Work</a>
       </div>
       <span class="tag-label">{s['tag']}</span>
       <h1 class="page-title">{s['title']}</h1>
@@ -5205,7 +5205,7 @@ def build_work_pages():
   <main class="page-hero">
     <div class="container">
       <div>
-        <a href="../work.html" class="back-nav-btn">← Back to Selected Work</a>
+        <a href="/work" class="back-nav-btn">← Back to Selected Work</a>
       </div>
 
       <div class="cs-header" style="margin-top: 1rem; margin-bottom: 3.5rem;">
@@ -5418,7 +5418,7 @@ def build_lab_pages():
 
       <div class="labs-grid" style="margin-top: 3.5rem;">
         <!-- Lab 1: CleanDesk -->
-        <a href="lab/cleandesk.html" class="lab-card">
+        <a href="/lab/cleandesk" class="lab-card">
           <div class="lab-phone-frame">
             <div class="lab-phone-inner">
               <img src="assets/images/lab-cleandesk.png" alt="CleanDesk" loading="lazy">
@@ -5433,7 +5433,7 @@ def build_lab_pages():
         </a>
 
         <!-- Lab 2: Soda Reader -->
-        <a href="lab/soda-reader.html" class="lab-card">
+        <a href="/lab/soda-reader" class="lab-card">
           <div class="lab-phone-frame">
             <div class="lab-phone-inner">
               <img src="assets/images/lab-soda.png" alt="Soda Reader" loading="lazy">
@@ -5448,7 +5448,7 @@ def build_lab_pages():
         </a>
 
         <!-- Lab 3: ContentLabAI -->
-        <a href="lab/contentlabai.html" class="lab-card">
+        <a href="/lab/contentlabai" class="lab-card">
           <div class="lab-phone-frame">
             <div class="lab-phone-inner">
               <img src="assets/images/lab-contentlabai.png" alt="ContentLabAI" loading="lazy">
@@ -6026,7 +6026,7 @@ def build_lab_pages():
   <main class="page-hero">
     <div class="container">
       <div>
-        <a href="../lab.html" class="back-nav-btn">← Back to Lab</a>
+        <a href="/lab" class="back-nav-btn">← Back to Lab</a>
       </div>
       <span class="tag-label">{l['tag']}</span>
       <h1 class="page-title">{l['title']}</h1>
@@ -6190,7 +6190,7 @@ def build_blog_pages():
           </div>
           <div class="blog-card-footer">
             <span>Read essay</span>
-            <a href="blog/{a['slug']}.html" class="read-more-link">
+            <a href="/blog/{a['slug']}" class="read-more-link">
               Full read
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
@@ -6238,7 +6238,7 @@ def build_blog_pages():
   <main class="page-hero">
     <div class="container">
       <div>
-        <a href="../blog.html" class="back-nav-btn">← Back to Subject Matter</a>
+        <a href="/blog" class="back-nav-btn">← Back to Subject Matter</a>
       </div>
       <div class="blog-card-top" style="max-width: 760px; margin: 0 auto 1rem;">
         <span class="blog-category-badge">{a['category']}</span>
@@ -6262,7 +6262,13 @@ def build_blog_pages():
 
     print('Blog pages generated')
 
+def build_vercel_json():
+    with open('vercel.json', 'w', encoding='utf-8') as f:
+        f.write('{\n  "cleanUrls": true,\n  "trailingSlash": false\n}\n')
+    print('vercel.json created successfully')
+
 if __name__ == '__main__':
+    build_vercel_json()
     generate_mockups()
     build_css()
     build_js()
