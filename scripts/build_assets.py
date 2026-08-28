@@ -2536,8 +2536,17 @@ function initScrollColorText() {
   const rawText = container.innerText.trim();
   const words = rawText.split(/\\s+/);
 
-  container.innerHTML = words.map(word => {
-    if (word.includes('Jennifer') || word.includes('AI') || word.includes('SaaS') || word.includes('PMM') || word.includes('Product') || word.includes('marketing')) {
+  container.innerHTML = words.map((word, i) => {
+    const cleanWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const prevClean = (words[i-1] || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const nextClean = (words[i+1] || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    const isProductMarketing = (cleanWord === 'product' && nextClean === 'marketing') || (cleanWord === 'marketing' && prevClean === 'product');
+    const isProductIdeas = (cleanWord === 'product' && nextClean === 'ideas') || (cleanWord === 'ideas' && prevClean === 'product');
+    const isPMM = cleanWord === 'pmm';
+    const isAI = cleanWord === 'ai';
+
+    if (isProductMarketing || isProductIdeas || isPMM || isAI) {
       return `<span class="word brand-highlight">${word}</span>`;
     }
     return `<span class="word">${word}</span>`;
@@ -2594,7 +2603,7 @@ function initCopyEmail() {
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    navigator.clipboard.writeText('jennifer@jenniesdigital.com').then(() => {
+    navigator.clipboard.writeText('hello@jenniesdigital.com').then(() => {
       const orig = btn.innerHTML;
       btn.innerHTML = '✓ Copied to clipboard!';
       setTimeout(() => {
@@ -2710,7 +2719,7 @@ def get_footer(root_prefix=''):
     return f"""  <!-- FOOTER / CONTACT SECTION (COLORED SAY HELLO) -->
   <footer id="contact" class="site-footer">
     <div class="container-wide">
-      <a href="mailto:jennifer@jenniesdigital.com" class="footer-hero-link">
+      <a href="mailto:hello@jenniesdigital.com" class="footer-hero-link">
         <span>
           Say hello
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-arrow-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -2720,8 +2729,8 @@ def get_footer(root_prefix=''):
       <div class="footer-meta-grid">
         <div class="footer-meta-item">
           <div class="meta-label">Email</div>
-          <a href="mailto:jennifer@jenniesdigital.com" id="copyEmailBtn" title="Click to copy email">
-            jennifer@jenniesdigital.com
+          <a href="mailto:hello@jenniesdigital.com" id="copyEmailBtn" title="Click to copy email">
+            hello@jenniesdigital.com
           </a>
         </div>
 
@@ -3011,7 +3020,7 @@ def build_index():
         <div class="about-grid">
           <div>
             <div id="scrollColorTextContainer" class="scroll-color-text">
-              I’m the kind of person who sees a product and immediately starts wondering, Who is this actually for? Why would they care? And why does it work the way it does? That curiosity is what led me to product marketing. Outside of PMM, I’m usually experimenting with AI, building random product ideas, learning something new, or reading a book I probably didn’t need to buy.
+              My friends call me Jennie. I’m the kind of person who sees a product and immediately starts wondering, Why would anyone choose to use this? That curiosity is what led me to product marketing. When I’m not being a PMM, I’m usually experimenting with AI, building random product ideas, learning something new, or reading a book I probably didn’t need to buy... again.
             </div>
 
             <div class="about-pills-row">

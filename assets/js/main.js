@@ -128,8 +128,17 @@ function initScrollColorText() {
   const rawText = container.innerText.trim();
   const words = rawText.split(/\s+/);
 
-  container.innerHTML = words.map(word => {
-    if (word.includes('Jennifer') || word.includes('AI') || word.includes('SaaS') || word.includes('PMM') || word.includes('Product') || word.includes('marketing')) {
+  container.innerHTML = words.map((word, i) => {
+    const cleanWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const prevClean = (words[i-1] || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    const nextClean = (words[i+1] || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    const isProductMarketing = (cleanWord === 'product' && nextClean === 'marketing') || (cleanWord === 'marketing' && prevClean === 'product');
+    const isProductIdeas = (cleanWord === 'product' && nextClean === 'ideas') || (cleanWord === 'ideas' && prevClean === 'product');
+    const isPMM = cleanWord === 'pmm';
+    const isAI = cleanWord === 'ai';
+
+    if (isProductMarketing || isProductIdeas || isPMM || isAI) {
       return `<span class="word brand-highlight">${word}</span>`;
     }
     return `<span class="word">${word}</span>`;
@@ -186,7 +195,7 @@ function initCopyEmail() {
 
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-    navigator.clipboard.writeText('jennifer@jenniesdigital.com').then(() => {
+    navigator.clipboard.writeText('hello@jenniesdigital.com').then(() => {
       const orig = btn.innerHTML;
       btn.innerHTML = '✓ Copied to clipboard!';
       setTimeout(() => {
