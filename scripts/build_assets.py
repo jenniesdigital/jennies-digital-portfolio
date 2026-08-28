@@ -1565,16 +1565,42 @@ html.light .about-badge-pill {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.75rem;
   margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.blog-badges-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
 }
 
 .blog-category-badge {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.7rem;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--brand-orange);
+  background: var(--brand-orange-light);
+  border: 1px solid var(--brand-orange);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.blog-format-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
 }
 
 .blog-read-time {
@@ -1620,6 +1646,39 @@ html.light .about-badge-pill {
 
 .blog-static-card:hover .read-more-link {
   transform: translateX(4px);
+}
+
+.blog-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.75rem;
+}
+
+.blog-tab-btn {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.blog-tab-btn:hover {
+  border-color: var(--brand-orange);
+  color: var(--text-primary);
+  background: var(--brand-orange-light);
+}
+
+.blog-tab-btn.active {
+  background: var(--brand-orange);
+  border-color: var(--brand-orange);
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .blog-view-all-cta {
@@ -3061,16 +3120,19 @@ def build_index():
             <h2 class="section-title">Subject Matter</h2>
           </div>
           <p class="section-subtitle">
-            My perspectives on AI, SaaS, product-led growth, Tech, Law and anything I find interesting.
+            Perspectives on Technology, Business, Law, Books, Ideas, People, and Culture.
           </p>
         </div>
 
         <div class="blog-grid-2col">
           <!-- Latest Article 1 -->
-          <article class="blog-static-card">
+          <article class="blog-static-card" data-category="Technology">
             <div>
               <div class="blog-card-top">
-                <span class="blog-category-badge">AI Positioning</span>
+                <div class="blog-badges-wrap">
+                  <span class="blog-category-badge">Technology</span>
+                  <span class="blog-format-tag">Essay</span>
+                </div>
                 <span class="blog-read-time">August 2026 · 6 min read</span>
               </div>
               <h3 class="blog-card-title">
@@ -3081,7 +3143,7 @@ def build_index():
               </p>
             </div>
             <div class="blog-card-footer">
-              <span>Read article</span>
+              <span>Read essay</span>
               <a href="/blog/the-death-of-feature-first-messaging" class="read-more-link">
                 Full read
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -3090,10 +3152,13 @@ def build_index():
           </article>
 
           <!-- Latest Article 2 -->
-          <article class="blog-static-card">
+          <article class="blog-static-card" data-category="Business">
             <div>
               <div class="blog-card-top">
-                <span class="blog-category-badge">Go-To-Market</span>
+                <div class="blog-badges-wrap">
+                  <span class="blog-category-badge">Business</span>
+                  <span class="blog-format-tag">Research</span>
+                </div>
                 <span class="blog-read-time">July 2026 · 8 min read</span>
               </div>
               <h3 class="blog-card-title">
@@ -3104,7 +3169,7 @@ def build_index():
               </p>
             </div>
             <div class="blog-card-footer">
-              <span>Read article</span>
+              <span>Read research</span>
               <a href="/blog/why-most-ai-saas-launches-fail" class="read-more-link">
                 Full read
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -3114,7 +3179,7 @@ def build_index():
         </div>
 
         <div class="blog-view-all-cta">
-          <a href="blog.html" class="btn-secondary-hero">
+          <a href="/blog" class="btn-secondary-hero">
             <span>View all Subject Matter articles</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.4rem;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
@@ -6067,7 +6132,8 @@ def build_blog_pages():
     articles = [
         {
             'slug': 'the-death-of-feature-first-messaging',
-            'category': 'AI Positioning',
+            'category': 'Technology',
+            'tag': 'Essay',
             'date': 'August 2026',
             'readTime': '6 min read',
             'title': 'The Death of Feature-First Messaging: How to Position AI Products in 2026',
@@ -6091,7 +6157,8 @@ def build_blog_pages():
         },
         {
             'slug': 'why-most-ai-saas-launches-fail',
-            'category': 'Go-To-Market',
+            'category': 'Business',
+            'tag': 'Research',
             'date': 'July 2026',
             'readTime': '8 min read',
             'title': 'Why Most AI SaaS Launches Fail: The Zero-to-One GTM Playbook',
@@ -6108,31 +6175,79 @@ def build_blog_pages():
             """
         },
         {
-            'slug': 'from-plg-to-enterprise-sales',
-            'category': 'SaaS Growth',
+            'slug': 'fintech-licensing-and-regulatory-moats',
+            'category': 'Law',
+            'tag': 'Research',
             'date': 'June 2026',
-            'readTime': '5 min read',
-            'title': 'From PLG to Enterprise Sales: Engineering the Perfect Product-Led Bridge',
-            'excerpt': 'How to transition self-serve developer and individual users into 6-figure enterprise deals without alienating your core open-source community.',
+            'readTime': '7 min read',
+            'title': 'Fintech Licensing & Regulatory Moats: A PMM Breakdown of Open Banking',
+            'excerpt': 'How regulatory frameworks and compliance structures create defensible go-to-market advantages for emerging financial platforms.',
             'content': """
-              <p>Product-Led Growth (PLG) gets you in the door; enterprise sales pays the bills. The magic is building the automated bridge between both worlds.</p>
-              
-              <h2>Defining the Product Qualified Account (PQA)</h2>
-              <p>Instead of cold outreach, train your sales intelligence to trigger when 3+ engineers from the same @company domain join the same workspace, run >500 API calls, and hit a team permission gate. At that exact moment, your PMM-crafted enterprise deck meets a ready and warm customer.</p>
+              <p>In heavily regulated environments like African fintech, regulation is often perceived solely as a bottleneck. However, from a product marketing standpoint, compliance is the ultimate trust moat.</p>
+
+              <h2>1. Compliance as Positioning</h2>
+              <p>When selling to institutional partners and enterprises, possessing direct CBN licensing or audited tier-1 payment infrastructure transforms risk-averse buyers into eager adopters. Messaging that emphasizes regulatory certainty beats feature checklists every time.</p>
+
+              <h2>2. The Strategic Value of Open Banking Protocols</h2>
+              <p>With standardized API frameworks emerging across the continent, products that position themselves as connective interoperability layers will capture exponential platform distribution.</p>
             """
         },
         {
-            'slug': 'pricing-and-packaging-in-the-agentic-ai-era',
-            'category': 'Pricing Strategy',
+            'slug': 'lessons-from-obviously-awesome',
+            'category': 'Books',
+            'tag': 'Review',
             'date': 'May 2026',
-            'readTime': '7 min read',
-            'title': "The PMM's Guide to Pricing & Packaging in the Agentic AI Era",
-            'excerpt': 'Moving away from per-seat SaaS licensing toward token-based, outcome-based, and credit-tiered hybrid monetization models.',
+            'readTime': '5 min read',
+            'title': 'Lessons from "Obviously Awesome": Finding the Strategic Context That Sells',
+            'excerpt': 'Why great products fail when placed in the wrong market category, and how deliberate framing transforms buyer perception.',
             'content': """
-              <p>Per-seat pricing penalizes software that saves user time. If an AI agent accomplishes in 5 minutes what once took a 10-person team a whole week, charging per seat is economic suicide.</p>
+              <p>April Dunford's classic framework on positioning remains the definitive guide for product marketers. The central insight is simple yet profound: context determines how value is judged.</p>
 
-              <h2>The Hybrid Monetization Matrix</h2>
-              <p>Learn how top AI SaaS products combine a predictable base platform fee (for security, governance, and infrastructure) with value-metric usage tiers (credits per completed workflow or task outcome).</p>
+              <h2>Core Takeaways</h2>
+              <ul>
+                <li><strong>Competitive Alternatives:</strong> What would customers do if your product didn't exist? (Often it is an Excel sheet or manual email).</li>
+                <li><strong>Unique Attributes:</strong> Capabilities you possess that alternatives cannot match.</li>
+                <li><strong>Value to the Customer:</strong> Translating features into measurable business outcomes.</li>
+                <li><strong>Target Customer Segment:</strong> Who cares the most about that specific value?</li>
+                <li><strong>Market Category:</strong> The frame of reference that makes your value obvious.</li>
+              </ul>
+            """
+        },
+        {
+            'slug': 'cognitive-architecture-vs-copywriting',
+            'category': 'Ideas',
+            'tag': 'Note',
+            'date': 'May 2026',
+            'readTime': '4 min read',
+            'title': 'Cognitive Architecture vs. Descriptive Copywriting in Tech',
+            'excerpt': 'Product marketing is less about decorative words and more about structuring the mental model a customer uses to navigate choice.',
+            'content': """
+              <p>Descriptive copywriting tells a customer what a product does. Cognitive architecture shapes how a customer thinks about their entire problem space.</p>
+              <p>When you define the problem better than anyone else, the customer instinctively assumes you have the best solution.</p>
+            """
+        },
+        {
+            'slug': 'the-shift-toward-dignity-in-digital-finance',
+            'category': 'Culture',
+            'tag': 'Essay',
+            'date': 'April 2026',
+            'readTime': '6 min read',
+            'title': 'The Shift Toward Dignity in Digital Finance & Consumer Trust',
+            'excerpt': 'Exploring how trust exhaustion and predatory friction have reshaped consumer expectations across modern financial products.',
+            'content': """
+              <p>In emerging digital ecosystems, consumer trust is fragile. Products that win long-term are not those with the flashiest growth hacks, but those that treat user agency, transparent pricing, and data privacy with utmost dignity.</p>
+            """
+        },
+        {
+            'slug': 'founder-led-marketing-in-the-early-days',
+            'category': 'People',
+            'tag': 'Essay',
+            'date': 'March 2026',
+            'readTime': '6 min read',
+            'title': 'Founder-Led Marketing: How Early-Stage Teams Win Hearts',
+            'excerpt': 'Why early customers buy the founder before they buy the software, and how to harness authentic storytelling before scaling a marketing team.',
+            'content': """
+              <p>Before an early-stage startup has brand recognition or enterprise case studies, its single greatest marketing asset is the founder's conviction. Personal narrative, public learning, and transparent building create an emotional bond that corporate marketing cannot replicate.</p>
             """
         }
     ]
@@ -6165,15 +6280,18 @@ def build_blog_pages():
       <span class="tag-label">Blog &amp; Insights</span>
       <h1 class="page-title">Subject Matter</h1>
       <p class="page-description">
-        Field notes and essays on AI, SaaS, product-led growth, Tech, Law and anything I find interesting.
+        Perspectives on Technology, Business, Law, Books, Ideas, People, and Culture.
       </p>
 
       <div class="blog-filter-tabs" style="margin-top: 2.5rem;">
-        <button type="button" class="blog-tab-btn active" data-filter="all">All Articles</button>
-        <button type="button" class="blog-tab-btn" data-filter="ai positioning">AI Positioning</button>
-        <button type="button" class="blog-tab-btn" data-filter="go-to-market">Go-To-Market</button>
-        <button type="button" class="blog-tab-btn" data-filter="saas growth">SaaS Growth</button>
-        <button type="button" class="blog-tab-btn" data-filter="pricing strategy">Pricing Strategy</button>
+        <button type="button" class="blog-tab-btn active" data-filter="all">All</button>
+        <button type="button" class="blog-tab-btn" data-filter="technology">Technology</button>
+        <button type="button" class="blog-tab-btn" data-filter="business">Business</button>
+        <button type="button" class="blog-tab-btn" data-filter="law">Law</button>
+        <button type="button" class="blog-tab-btn" data-filter="books">Books</button>
+        <button type="button" class="blog-tab-btn" data-filter="ideas">Ideas</button>
+        <button type="button" class="blog-tab-btn" data-filter="people">People</button>
+        <button type="button" class="blog-tab-btn" data-filter="culture">Culture</button>
       </div>
 
       <div class="blog-grid-2col">
@@ -6182,14 +6300,17 @@ def build_blog_pages():
         html_blog += f"""        <article class="blog-static-card" data-category="{a['category']}">
           <div>
             <div class="blog-card-top">
-              <span class="blog-category-badge">{a['category']}</span>
+              <div class="blog-badges-wrap">
+                <span class="blog-category-badge">{a['category']}</span>
+                <span class="blog-format-tag">{a['tag']}</span>
+              </div>
               <span class="blog-read-time">{a['date']} · {a['readTime']}</span>
             </div>
             <h2 class="blog-card-title">{a['title']}</h2>
             <p class="blog-card-excerpt">{a['excerpt']}</p>
           </div>
           <div class="blog-card-footer">
-            <span>Read essay</span>
+            <span>Read {a['tag'].lower()}</span>
             <a href="/blog/{a['slug']}" class="read-more-link">
               Full read
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -6240,8 +6361,11 @@ def build_blog_pages():
       <div>
         <a href="/blog" class="back-nav-btn">← Back to Subject Matter</a>
       </div>
-      <div class="blog-card-top" style="max-width: 760px; margin: 0 auto 1rem;">
-        <span class="blog-category-badge">{a['category']}</span>
+      <div class="blog-card-top" style="max-width: 760px; margin: 0 auto 1.25rem;">
+        <div class="blog-badges-wrap">
+          <span class="blog-category-badge">{a['category']}</span>
+          <span class="blog-format-tag">{a['tag']}</span>
+        </div>
         <span class="blog-read-time">{a['date']} · {a['readTime']}</span>
       </div>
       <h1 class="page-title" style="max-width: 760px; margin: 0 auto 2.5rem; font-size: clamp(2rem, 4.5vw, 3.25rem);">{a['title']}</h1>
