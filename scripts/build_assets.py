@@ -1553,12 +1553,20 @@ html.light .about-badge-pill {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
+  height: 100%;
 }
 
 .blog-static-card:hover {
   border-color: var(--brand-orange);
   box-shadow: 0 16px 40px rgba(230, 92, 0, 0.12);
   background: var(--bg-card-hover);
+}
+
+.blog-static-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .blog-card-top {
@@ -1613,9 +1621,15 @@ html.light .about-badge-pill {
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 700;
-  line-height: 1.25;
+  line-height: 1.3;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 3.5rem;
 }
 
 .blog-title-link {
@@ -1634,6 +1648,12 @@ html.light .about-badge-pill {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 4.5rem;
 }
 
 .blog-card-footer {
@@ -1645,6 +1665,7 @@ html.light .about-badge-pill {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--brand-orange);
+  margin-top: auto;
 }
 
 .read-more-link {
@@ -3122,7 +3143,7 @@ def build_index():
       </div>
     </section>
 
-        <!-- SUBJECT MATTER (BLOG SECTION) -->
+            <!-- SUBJECT MATTER (BLOG SECTION) -->
     <section id="blog" class="section-blog">
       <div class="container">
         <div class="section-header">
@@ -3136,9 +3157,9 @@ def build_index():
         </div>
 
         <div class="blog-grid-2col">
-          <!-- Latest Article 1: Richest Man in Babylon -->
+          <!-- Article 1: Richest Man in Babylon -->
           <article class="blog-static-card" data-category="Books">
-            <div>
+            <div class="blog-static-card-body">
               <div class="blog-card-top">
                 <div class="blog-badges-wrap">
                   <span class="blog-category-badge">Books</span>
@@ -3150,7 +3171,7 @@ def build_index():
                 <a href="/blog/lessons-from-the-richest-man-in-babylon" class="blog-title-link">Lessons from “The Richest Man in Babylon”: A Book About Money That Isn't Really About Money</a>
               </h3>
               <p class="blog-card-excerpt">
-                I picked up The Richest Man in Babylon expecting to learn the secret to becoming rich. Instead, I got a book that kept telling me things I already knew—and why that's exactly why it works.
+                I had just finished watching a tour of one of those Lekki homes and was fired up like I'd been about 6 times this year to rival Elon Musk. So, on my way and in a bout of confident motivation, I picked up The Richest Man in Babylon in a bookstore expecting to learn how to become rich…
               </p>
             </div>
             <div class="blog-card-footer">
@@ -3161,9 +3182,9 @@ def build_index():
             </div>
           </article>
 
-          <!-- Latest Article 2: People Who Build Tech -->
+          <!-- Article 2: People Who Build Tech -->
           <article class="blog-static-card" data-category="Business">
-            <div>
+            <div class="blog-static-card-body">
               <div class="blog-card-top">
                 <div class="blog-badges-wrap">
                   <span class="blog-category-badge">Business</span>
@@ -3175,7 +3196,7 @@ def build_index():
                 <a href="/blog/the-people-who-build-technology-dont-always-understand-the-people-who-use-it" class="blog-title-link">The People Who Build Technology Don't Always Understand the People Who Use It</a>
               </h3>
               <p class="blog-card-excerpt">
-                You're a founder who has been living inside your product for six months. You know too much. A guide on getting out of your own head and building for real customer reality.
+                You're a founder who has been building something for six months. There's a pretty high chance you know exactly what it does. You know why you built it. You have probably explained the idea so many times that you can now explain it while brushing your teeth…
               </p>
             </div>
             <div class="blog-card-footer">
@@ -6146,8 +6167,7 @@ def build_blog_pages():
             'date': 'August 29, 2026',
             'readTime': '4 min read',
             'title': 'Lessons from “The Richest Man in Babylon”: A Book About Money That Isn\'t Really About Money',
-            'excerpt': "I picked up The Richest Man in Babylon expecting to learn the secret to becoming rich. Instead, I got a book that kept telling me things I already knew—and why that\'s exactly why it works.",
-            'is_published': True,
+            'excerpt': "I had just finished watching a tour of one of those Lekki homes and was fired up like I'd been about 6 times this year to rival Elon Musk. So, on my way and in a bout of confident motivation, I picked up The Richest Man in Babylon in a bookstore expecting to learn how to become rich…",
             'content': """
               <p>I had just finished watching a tour of one of those Lekki homes and was fired up like I'd been about 6 times this year to rival Elon Musk.</p>
 
@@ -6215,8 +6235,7 @@ def build_blog_pages():
             'date': 'August 28, 2026',
             'readTime': '8 min read',
             'title': "The People Who Build Technology Don't Always Understand the People Who Use It",
-            'excerpt': "You're a founder who has been living inside your product for six months. You know too much. A guide on getting out of your own head and building for real customer reality.",
-            'is_published': True,
+            'excerpt': "You're a founder who has been building something for six months. There's a pretty high chance you know exactly what it does. You know why you built it. You have probably explained the idea so many times that you can now explain it while brushing your teeth…",
             'content': """
               <p class="article-lead" style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2rem;">A guide for founders building solo...</p>
 
@@ -6397,66 +6416,6 @@ def build_blog_pages():
                 <p>Alright! This is the end. In this piece, I've tried to sum up all points I know about building a product and the importance of knowing your customer while you're at it. I hope you enjoyed it! Say hi if you did!</p>
               </div>
             """
-        },
-        {
-            'slug': 'the-death-of-feature-first-messaging',
-            'category': 'Technology',
-            'tag': 'Essay',
-            'date': 'Coming Soon',
-            'readTime': 'In Progress',
-            'title': 'The Death of Feature-First Messaging: How to Position AI Products in 2026',
-            'excerpt': 'Why listing parameter counts and latency benchmark numbers fails to convert enterprise buyers, and how leading AI companies structure their narrative around business cognitive leverage.',
-            'is_published': False
-        },
-        {
-            'slug': 'fintech-licensing-and-regulatory-moats',
-            'category': 'Law',
-            'tag': 'Research',
-            'date': 'Coming Soon',
-            'readTime': 'In Progress',
-            'title': 'Fintech Licensing & Regulatory Moats: A PMM Breakdown of Open Banking',
-            'excerpt': 'How regulatory frameworks and compliance structures create defensible go-to-market advantages for emerging financial platforms.',
-            'is_published': False
-        },
-        {
-            'slug': 'lessons-from-obviously-awesome',
-            'category': 'Books',
-            'tag': 'Review',
-            'date': 'Coming Soon',
-            'readTime': 'In Progress',
-            'title': 'Lessons from "Obviously Awesome": Finding the Strategic Context That Sells',
-            'excerpt': 'Why great products fail when placed in the wrong market category, and how deliberate framing transforms buyer perception.',
-            'is_published': False
-        },
-        {
-            'slug': 'cognitive-architecture-vs-copywriting',
-            'category': 'Ideas',
-            'tag': 'Note',
-            'date': 'Coming Soon',
-            'readTime': 'In Progress',
-            'title': 'Cognitive Architecture vs. Descriptive Copywriting in Tech',
-            'excerpt': 'Product marketing is less about decorative words and more about structuring the mental model a customer uses to navigate choice.',
-            'is_published': False
-        },
-        {
-            'slug': 'the-shift-toward-dignity-in-digital-finance',
-            'category': 'Culture',
-            'tag': 'Essay',
-            'date': 'Coming Soon',
-            'readTime': 'In Progress',
-            'title': 'The Shift Toward Dignity in Digital Finance & Consumer Trust',
-            'excerpt': 'Exploring how trust exhaustion and predatory friction have reshaped consumer expectations across modern financial products.',
-            'is_published': False
-        },
-        {
-            'slug': 'founder-led-marketing-in-the-early-days',
-            'category': 'People',
-            'tag': 'Essay',
-            'date': 'Coming Soon',
-            'readTime': 'In Progress',
-            'title': 'Founder-Led Marketing: How Early-Stage Teams Win Hearts',
-            'excerpt': 'Why early customers buy the founder before they buy the software, and how to harness authentic storytelling before scaling a marketing team.',
-            'is_published': False
         }
     ]
 
@@ -6506,7 +6465,7 @@ def build_blog_pages():
 """
     for a in articles:
         html_blog += f"""        <article class="blog-static-card" data-category="{a['category']}">
-          <div>
+          <div class="blog-static-card-body">
             <div class="blog-card-top">
               <div class="blog-badges-wrap">
                 <span class="blog-category-badge">{a['category']}</span>
@@ -6528,6 +6487,15 @@ def build_blog_pages():
         </article>
 """
     html_blog += f"""      </div>
+
+      <div id="blogEmptyState" style="display: none; background: var(--bg-card); border: 1px dashed var(--border-medium); border-radius: var(--radius-lg); padding: 3.5rem 2rem; text-align: center; margin-top: 2rem;">
+        <p style="color: var(--brand-orange); font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Coming Soon</p>
+        <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.75rem;">No published articles in this category yet</h3>
+        <p style="color: var(--text-secondary); max-width: 460px; margin: 0 auto 1.5rem; line-height: 1.6;">
+          Jennie is actively writing new pieces. Check back soon or switch back to all articles!
+        </p>
+        <button type="button" class="btn-about-secondary" onclick="document.querySelector('.blog-tab-btn[data-filter=\'all\']').click()">View All Articles</button>
+      </div>
     </div>
   </main>
 
@@ -6539,19 +6507,16 @@ def build_blog_pages():
     with open('blog.html', 'w', encoding='utf-8') as f:
         f.write(html_blog)
 
-    published_articles = [art for art in articles if art.get('is_published', False)]
-
-    for a in articles:
-        is_pub = a.get('is_published', False)
+    for i, a in enumerate(articles):
         h = get_header(active_nav='blog', root_prefix='../', is_homepage=False)
         ft = get_footer(root_prefix='../')
         
-        # Read Next section
-        other_published = [art for art in published_articles if art['slug'] != a['slug']]
+        # Read Next section links to the other published article
+        other_published = [art for art in articles if art['slug'] != a['slug']]
         read_next_cards_html = ""
         for na in other_published:
             read_next_cards_html += f"""          <article class="blog-static-card" data-category="{na['category']}">
-            <div>
+            <div class="blog-static-card-body">
               <div class="blog-card-top">
                 <div class="blog-badges-wrap">
                   <span class="blog-category-badge">{na['category']}</span>
@@ -6572,39 +6537,6 @@ def build_blog_pages():
             </div>
           </article>
 """
-
-        if is_pub:
-            article_body = a['content']
-            date_display = a['date']
-            read_time_display = a['readTime']
-        else:
-            date_display = "Coming Soon"
-            read_time_display = "In Progress"
-            article_body = f"""
-              <p class="article-lead" style="font-size: 1.15rem; font-style: italic; color: var(--brand-orange); margin-bottom: 2rem;">
-                Coming soon...
-              </p>
-              
-              <div style="background: var(--bg-surface-elevated); border-left: 4px solid var(--brand-orange); padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2.5rem;">
-                <p style="margin: 0; font-weight: 600; color: var(--text-primary); font-size: 1.05rem;">
-                  Jennie is currently researching and writing this piece. Check back shortly or say hi if you'd like an early draft!
-                </p>
-              </div>
-
-              <p style="color: var(--text-secondary); line-height: 1.8;">
-                {a['excerpt']}
-              </p>
-
-              <h2>What this piece will cover</h2>
-              <p style="color: var(--text-secondary); line-height: 1.8;">
-                Key frameworks, real-world case breakdowns, positioning strategies, and actionable takeaways for founders and operators.
-              </p>
-
-              <div style="margin-top: 3rem; text-align: center; padding: 2.5rem 1.5rem; background: var(--bg-card); border: 1px dashed var(--border-medium); border-radius: 12px;">
-                <p style="margin: 0 0 1rem; color: var(--text-muted); font-size: 0.9375rem;">Interested in this topic or want to collaborate?</p>
-                <a href="/#contact" class="btn-about-primary" style="display: inline-flex;">Say Hi 👋</a>
-              </div>
-            """
 
         page_html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -6639,12 +6571,12 @@ def build_blog_pages():
           <span class="blog-category-badge">{a['category']}</span>
           <span class="blog-format-tag">{a['tag']}</span>
         </div>
-        <span class="blog-read-time">{date_display} · {read_time_display}</span>
+        <span class="blog-read-time">{a['date']} · {a['readTime']}</span>
       </div>
       <h1 class="page-title" style="max-width: 760px; margin: 0 auto 2.5rem; font-size: clamp(2rem, 4.5vw, 3.25rem);">{a['title']}</h1>
       
       <div class="article-content">
-        {article_body}
+        {a['content']}
       </div>
 
       <!-- READ NEXT SECTION -->
