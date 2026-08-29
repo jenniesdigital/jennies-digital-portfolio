@@ -6409,16 +6409,6 @@ def build_blog_pages():
             'is_published': False
         },
         {
-            'slug': 'why-most-ai-saas-launches-fail',
-            'category': 'Business',
-            'tag': 'Research',
-            'date': 'Coming Soon',
-            'readTime': 'In Progress',
-            'title': 'Why Most AI SaaS Launches Fail: The Zero-to-One GTM Playbook',
-            'excerpt': 'Deconstructing the common pitfalls of AI launches and the exact 5-stage framework to guarantee day-one traction, press coverage, and enterprise pipeline generation.',
-            'is_published': False
-        },
-        {
             'slug': 'fintech-licensing-and-regulatory-moats',
             'category': 'Law',
             'tag': 'Research',
@@ -6515,12 +6505,6 @@ def build_blog_pages():
       <div class="blog-grid-2col">
 """
     for a in articles:
-        is_pub = a.get('is_published', False)
-        footer_link = f"""<a href="/blog/{a['slug']}" class="read-more-link">
-              Full read
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>""" if is_pub else f"""<span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--brand-orange); font-weight: 600;">Coming Soon</span>"""
-
         html_blog += f"""        <article class="blog-static-card" data-category="{a['category']}">
           <div>
             <div class="blog-card-top">
@@ -6531,12 +6515,15 @@ def build_blog_pages():
               <span class="blog-read-time">{a['date']} · {a['readTime']}</span>
             </div>
             <h2 class="blog-card-title">
-              {f'<a href="/blog/{a["slug"]}" class="blog-title-link">{a["title"]}</a>' if is_pub else f'<span>{a["title"]}</span>'}
+              <a href="/blog/{a['slug']}" class="blog-title-link">{a['title']}</a>
             </h2>
             <p class="blog-card-excerpt">{a['excerpt']}</p>
           </div>
           <div class="blog-card-footer">
-            {footer_link}
+            <a href="/blog/{a['slug']}" class="read-more-link">
+              Full read
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
           </div>
         </article>
 """
@@ -6554,13 +6541,13 @@ def build_blog_pages():
 
     published_articles = [art for art in articles if art.get('is_published', False)]
 
-    for i, a in enumerate(published_articles):
+    for a in articles:
+        is_pub = a.get('is_published', False)
         h = get_header(active_nav='blog', root_prefix='../', is_homepage=False)
         ft = get_footer(root_prefix='../')
         
-        # Determine other published articles for Read Next
+        # Read Next section
         other_published = [art for art in published_articles if art['slug'] != a['slug']]
-        
         read_next_cards_html = ""
         for na in other_published:
             read_next_cards_html += f"""          <article class="blog-static-card" data-category="{na['category']}">
@@ -6585,6 +6572,39 @@ def build_blog_pages():
             </div>
           </article>
 """
+
+        if is_pub:
+            article_body = a['content']
+            date_display = a['date']
+            read_time_display = a['readTime']
+        else:
+            date_display = "Coming Soon"
+            read_time_display = "In Progress"
+            article_body = f"""
+              <p class="article-lead" style="font-size: 1.15rem; font-style: italic; color: var(--brand-orange); margin-bottom: 2rem;">
+                Coming soon...
+              </p>
+              
+              <div style="background: var(--bg-surface-elevated); border-left: 4px solid var(--brand-orange); padding: 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2.5rem;">
+                <p style="margin: 0; font-weight: 600; color: var(--text-primary); font-size: 1.05rem;">
+                  Jennie is currently researching and writing this piece. Check back shortly or say hi if you'd like an early draft!
+                </p>
+              </div>
+
+              <p style="color: var(--text-secondary); line-height: 1.8;">
+                {a['excerpt']}
+              </p>
+
+              <h2>What this piece will cover</h2>
+              <p style="color: var(--text-secondary); line-height: 1.8;">
+                Key frameworks, real-world case breakdowns, positioning strategies, and actionable takeaways for founders and operators.
+              </p>
+
+              <div style="margin-top: 3rem; text-align: center; padding: 2.5rem 1.5rem; background: var(--bg-card); border: 1px dashed var(--border-medium); border-radius: 12px;">
+                <p style="margin: 0 0 1rem; color: var(--text-muted); font-size: 0.9375rem;">Interested in this topic or want to collaborate?</p>
+                <a href="/#contact" class="btn-about-primary" style="display: inline-flex;">Say Hi 👋</a>
+              </div>
+            """
 
         page_html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -6619,12 +6639,12 @@ def build_blog_pages():
           <span class="blog-category-badge">{a['category']}</span>
           <span class="blog-format-tag">{a['tag']}</span>
         </div>
-        <span class="blog-read-time">{a['date']} · {a['readTime']}</span>
+        <span class="blog-read-time">{date_display} · {read_time_display}</span>
       </div>
       <h1 class="page-title" style="max-width: 760px; margin: 0 auto 2.5rem; font-size: clamp(2rem, 4.5vw, 3.25rem);">{a['title']}</h1>
       
       <div class="article-content">
-        {a['content']}
+        {article_body}
       </div>
 
       <!-- READ NEXT SECTION -->
@@ -6643,67 +6663,6 @@ def build_blog_pages():
         <div class="blog-grid-2col">
 {read_next_cards_html}        </div>
       </section>
-    </div>
-  </main>
-
-{ft}
-  <script src="../assets/js/main.js"></script>
-</body>
-</html>
-"""
-        with open(f"blog/{a['slug']}.html", 'w', encoding='utf-8') as f:
-            f.write(page_html)
-
-    # For placeholder articles that are not published, create clean coming soon pages if anyone accesses the link directly
-    placeholder_articles = [art for art in articles if not art.get('is_published', False)]
-    for a in placeholder_articles:
-        h = get_header(active_nav='blog', root_prefix='../', is_homepage=False)
-        ft = get_footer(root_prefix='../')
-        page_html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{a['title']} — Coming Soon</title>
-  <link rel="icon" type="image/png" href="../assets/logo-transparent.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,100,200..800&family=Geist+Mono:wght@400;500;600&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css">
-  <script>
-    (() => {{
-      try {{
-        const t = localStorage.getItem('jd_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        if (t === 'light') document.documentElement.classList.add('light');
-      }} catch (e) {{}}
-    }})();
-  </script>
-</head>
-<body>
-{h}
-
-  <main class="page-hero">
-    <div class="container">
-      <div>
-        <a href="/blog" class="back-nav-btn">← Back to Subject Matter</a>
-      </div>
-      <div class="blog-card-top" style="max-width: 760px; margin: 0 auto 1.25rem;">
-        <div class="blog-badges-wrap">
-          <span class="blog-category-badge">{a['category']}</span>
-          <span class="blog-format-tag">{a['tag']}</span>
-        </div>
-        <span class="blog-read-time">Coming Soon</span>
-      </div>
-      <h1 class="page-title" style="max-width: 760px; margin: 0 auto 2rem; font-size: clamp(2rem, 4.5vw, 3.25rem);">{a['title']}</h1>
-      
-      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 4rem 2rem; text-align: center; margin: 2rem auto 4rem; max-width: 720px;">
-        <div style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--brand-orange); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Work In Progress</div>
-        <h2 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">This piece is currently being drafted.</h2>
-        <p style="color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin: 0 auto 2.5rem;">
-          Jennie is currently researching and writing this article. Check back shortly, or say hi if you'd like to discuss this topic early!
-        </p>
-        <a href="/#contact" class="btn-about-primary" style="display: inline-flex;">Say Hi 👋</a>
-      </div>
     </div>
   </main>
 
