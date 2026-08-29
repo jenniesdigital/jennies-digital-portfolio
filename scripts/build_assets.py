@@ -1618,6 +1618,17 @@ html.light .about-badge-pill {
   margin-bottom: 0.75rem;
 }
 
+.blog-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-title-link:hover,
+.blog-static-card:hover .blog-title-link {
+  color: var(--brand-orange);
+}
+
 .blog-card-excerpt {
   font-size: 0.9375rem;
   color: var(--text-secondary);
@@ -3136,7 +3147,7 @@ def build_index():
                 <span class="blog-read-time">August 2026 · 6 min read</span>
               </div>
               <h3 class="blog-card-title">
-                The Death of Feature-First Messaging: How to Position AI Products in 2026
+                <a href="/blog/the-death-of-feature-first-messaging" class="blog-title-link">The Death of Feature-First Messaging: How to Position AI Products in 2026</a>
               </h3>
               <p class="blog-card-excerpt">
                 Why listing parameter counts and latency benchmark numbers fails to convert enterprise buyers, and how leading AI companies structure their narrative around business cognitive leverage.
@@ -3161,7 +3172,7 @@ def build_index():
                 <span class="blog-read-time">July 2026 · 8 min read</span>
               </div>
               <h3 class="blog-card-title">
-                Why Most AI SaaS Launches Fail: The Zero-to-One GTM Playbook
+                <a href="/blog/why-most-ai-saas-launches-fail" class="blog-title-link">Why Most AI SaaS Launches Fail: The Zero-to-One GTM Playbook</a>
               </h3>
               <p class="blog-card-excerpt">
                 Deconstructing the common pitfalls of AI launches and the exact 5-stage framework to guarantee day-one traction, press coverage, and enterprise pipeline generation.
@@ -6304,7 +6315,9 @@ def build_blog_pages():
               </div>
               <span class="blog-read-time">{a['date']} · {a['readTime']}</span>
             </div>
-            <h2 class="blog-card-title">{a['title']}</h2>
+            <h2 class="blog-card-title">
+              <a href="/blog/{a['slug']}" class="blog-title-link">{a['title']}</a>
+            </h2>
             <p class="blog-card-excerpt">{a['excerpt']}</p>
           </div>
           <div class="blog-card-footer">
@@ -6327,9 +6340,38 @@ def build_blog_pages():
     with open('blog.html', 'w', encoding='utf-8') as f:
         f.write(html_blog)
 
-    for a in articles:
+    for i, a in enumerate(articles):
         h = get_header(active_nav='blog', root_prefix='../', is_homepage=False)
         ft = get_footer(root_prefix='../')
+        
+        # Determine 2 next recommended articles
+        next_articles = [articles[(i + 1) % len(articles)], articles[(i + 2) % len(articles)]]
+        
+        read_next_cards_html = ""
+        for na in next_articles:
+            read_next_cards_html += f"""          <article class="blog-static-card" data-category="{na['category']}">
+            <div>
+              <div class="blog-card-top">
+                <div class="blog-badges-wrap">
+                  <span class="blog-category-badge">{na['category']}</span>
+                  <span class="blog-format-tag">{na['tag']}</span>
+                </div>
+                <span class="blog-read-time">{na['date']} · {na['readTime']}</span>
+              </div>
+              <h3 class="blog-card-title" style="font-size: 1.2rem;">
+                <a href="/blog/{na['slug']}" class="blog-title-link">{na['title']}</a>
+              </h3>
+              <p class="blog-card-excerpt" style="font-size: 0.875rem; margin-bottom: 1.25rem;">{na['excerpt']}</p>
+            </div>
+            <div class="blog-card-footer">
+              <a href="/blog/{na['slug']}" class="read-more-link">
+                Full read
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+          </article>
+"""
+
         page_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6370,6 +6412,23 @@ def build_blog_pages():
       <div class="article-content">
         {a['content']}
       </div>
+
+      <!-- READ NEXT SECTION -->
+      <section class="read-next-section" style="max-width: 820px; margin: 5rem auto 0; padding-top: 3.5rem; border-top: 1px solid var(--border-subtle);">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="tag-label">Continue Reading</span>
+            <h2 style="font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; margin: 0.25rem 0 0; color: var(--text-primary);">Read Next</h2>
+          </div>
+          <a href="/blog" class="read-more-link" style="font-weight: 600;">
+            All articles
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="blog-grid-2col">
+{read_next_cards_html}        </div>
+      </section>
     </div>
   </main>
 
