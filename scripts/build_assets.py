@@ -3122,7 +3122,7 @@ def build_index():
       </div>
     </section>
 
-    <!-- SUBJECT MATTER (BLOG SECTION) -->
+        <!-- SUBJECT MATTER (BLOG SECTION) -->
     <section id="blog" class="section-blog">
       <div class="container">
         <div class="section-header">
@@ -3136,50 +3136,50 @@ def build_index():
         </div>
 
         <div class="blog-grid-2col">
-          <!-- Latest Article 1 -->
-          <article class="blog-static-card" data-category="Technology">
+          <!-- Latest Article 1: Richest Man in Babylon -->
+          <article class="blog-static-card" data-category="Books">
             <div>
               <div class="blog-card-top">
                 <div class="blog-badges-wrap">
-                  <span class="blog-category-badge">Technology</span>
-                  <span class="blog-format-tag">Essay</span>
+                  <span class="blog-category-badge">Books</span>
+                  <span class="blog-format-tag">Review</span>
                 </div>
-                <span class="blog-read-time">August 2026 · 6 min read</span>
+                <span class="blog-read-time">August 29, 2026 · 4 min read</span>
               </div>
               <h3 class="blog-card-title">
-                <a href="/blog/the-death-of-feature-first-messaging" class="blog-title-link">The Death of Feature-First Messaging: How to Position AI Products in 2026</a>
+                <a href="/blog/lessons-from-the-richest-man-in-babylon" class="blog-title-link">Lessons from “The Richest Man in Babylon”: A Book About Money That Isn't Really About Money</a>
               </h3>
               <p class="blog-card-excerpt">
-                Why listing parameter counts and latency benchmark numbers fails to convert enterprise buyers, and how leading AI companies structure their narrative around business cognitive leverage.
+                I picked up The Richest Man in Babylon expecting to learn the secret to becoming rich. Instead, I got a book that kept telling me things I already knew—and why that's exactly why it works.
               </p>
             </div>
             <div class="blog-card-footer">
-              <a href="/blog/the-death-of-feature-first-messaging" class="read-more-link">
+              <a href="/blog/lessons-from-the-richest-man-in-babylon" class="read-more-link">
                 Full read
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
             </div>
           </article>
 
-          <!-- Latest Article 2 -->
+          <!-- Latest Article 2: People Who Build Tech -->
           <article class="blog-static-card" data-category="Business">
             <div>
               <div class="blog-card-top">
                 <div class="blog-badges-wrap">
                   <span class="blog-category-badge">Business</span>
-                  <span class="blog-format-tag">Research</span>
+                  <span class="blog-format-tag">Essay</span>
                 </div>
-                <span class="blog-read-time">July 2026 · 8 min read</span>
+                <span class="blog-read-time">August 28, 2026 · 8 min read</span>
               </div>
               <h3 class="blog-card-title">
-                <a href="/blog/why-most-ai-saas-launches-fail" class="blog-title-link">Why Most AI SaaS Launches Fail: The Zero-to-One GTM Playbook</a>
+                <a href="/blog/the-people-who-build-technology-dont-always-understand-the-people-who-use-it" class="blog-title-link">The People Who Build Technology Don't Always Understand the People Who Use It</a>
               </h3>
               <p class="blog-card-excerpt">
-                Deconstructing the common pitfalls of AI launches and the exact 5-stage framework to guarantee day-one traction, press coverage, and enterprise pipeline generation.
+                You're a founder who has been living inside your product for six months. You know too much. A guide on getting out of your own head and building for real customer reality.
               </p>
             </div>
             <div class="blog-card-footer">
-              <a href="/blog/why-most-ai-saas-launches-fail" class="read-more-link">
+              <a href="/blog/the-people-who-build-technology-dont-always-understand-the-people-who-use-it" class="read-more-link">
                 Full read
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
               </a>
@@ -6140,6 +6140,75 @@ def build_blog_pages():
 
     articles = [
         {
+            'slug': 'lessons-from-the-richest-man-in-babylon',
+            'category': 'Books',
+            'tag': 'Review',
+            'date': 'August 29, 2026',
+            'readTime': '4 min read',
+            'title': 'Lessons from “The Richest Man in Babylon”: A Book About Money That Isn\'t Really About Money',
+            'excerpt': "I picked up The Richest Man in Babylon expecting to learn the secret to becoming rich. Instead, I got a book that kept telling me things I already knew—and why that\'s exactly why it works.",
+            'is_published': True,
+            'content': """
+              <p>I had just finished watching a tour of one of those Lekki homes and was fired up like I'd been about 6 times this year to rival Elon Musk.</p>
+
+              <p>So, on my way and in a bout of confident motivation, I picked up <em>The Richest Man in Babylon</em> in a bookstore expecting to learn how to become rich… In fact, I had already shared my money amongst you, my wonderful readers.</p>
+
+              <p>I was going to find the secret to being rich that y’all had been hiding from me.</p>
+
+              <p>Naturally.</p>
+
+              <p>The title doesn't exactly leave much room for interpretation.</p>
+
+              <p>Instead, I got a book that kept telling me things I already knew.</p>
+
+              <p style="font-weight: 600; color: var(--brand-orange); font-size: 1.05rem;">Save money. Spend less than you earn. Invest. Avoid unnecessary debt. Make your money work for you.</p>
+
+              <p>I knew all of that. You probably do too.</p>
+
+              <p>There was a strange feeling as I closed the last page… was that… disappointment?</p>
+
+              <p>And yet, after a while mourning my 4,500 naira investment that would make me rich, it clicked. Somewhere between the ancient Babylonian stories in the book and the man who kept finding reasons not to save, I realised that knowing what to do with money and actually doing it are two very different things.</p>
+
+              <p>That's what made the book useful to me.</p>
+
+              <p>George S. Clason tells his financial lessons through a collection of stories set in ancient Babylon. The language is kind of old-fashioned, the characters speak like people who haven't discovered WhatsApp yet and don't know the meaning of “being cooked”, and sometimes the lessons are repeated so many times that you might find yourself thinking, <em>okay sir, I understand. Go on please.</em></p>
+
+              <p>But I think repetition is actually part of the point.</p>
+
+              <p>This book isn't trying to give you a complicated investment strategy. It is trying to get a few simple principles so deeply into your head that you can remember them in a split second before every decision. They are so simple, you stop negotiating with them.</p>
+
+              <div style="background: var(--bg-surface-elevated); border-left: 4px solid var(--brand-orange); padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                <p style="margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; font-family: var(--font-mono); color: var(--text-secondary); margin-bottom: 0.25rem;">Core Principle</p>
+                <p style="margin: 0; font-weight: 700; font-size: 1.25rem; color: var(--brand-orange);">Pay yourself first.</p>
+              </div>
+
+              <p>When money comes in, don't treat every naira as money available for spending. Put some aside first, then live on what remains.</p>
+
+              <p>That sounds almost insultingly simple. But I think that's why it works.</p>
+
+              <p>A lot of our financial problems aren't caused by not knowing what to do. We know what to do, you and I know. They're caused by doing everything else first. (Yes, I'm side eyeing you that said you want to save since January).</p>
+
+              <h2>Rethinking Wealth &amp; Lifestyle Inflation</h2>
+              <p>The book also made me think differently about wealth.</p>
+
+              <p>Wealth isn't simply the amount of money sitting in your account today or what you'll be paid tomorrow. It's what you consistently keep, grow, and make productive over time.</p>
+
+              <p>Earning more money doesn't automatically make someone wealthier. If your income increases and your lifestyle increases at exactly the same speed, you can make significantly more money and still feel broke.</p>
+
+              <h2>Verdict</h2>
+              <p><em>The Richest Man in Babylon</em> isn't particularly sophisticated. Some of the financial advice feels dated, and I wouldn't use a book written in the 1920s as my only source for modern investing or personal finance. Especially where they suggest keeping your money in a pouch, haha.</p>
+
+              <p>But as a book about financial behaviour, it has aged surprisingly well.</p>
+
+              <p>Simple advice. Annoyingly good advice.</p>
+
+              <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-weight: 600; color: var(--text-primary);">Jennie's Rating:</span>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: var(--brand-orange); font-size: 1.1rem;">4/5 ⭐</span>
+              </div>
+            """
+        },
+        {
             'slug': 'the-people-who-build-technology-dont-always-understand-the-people-who-use-it',
             'category': 'Business',
             'tag': 'Essay',
@@ -6147,6 +6216,7 @@ def build_blog_pages():
             'readTime': '8 min read',
             'title': "The People Who Build Technology Don't Always Understand the People Who Use It",
             'excerpt': "You're a founder who has been living inside your product for six months. You know too much. A guide on getting out of your own head and building for real customer reality.",
+            'is_published': True,
             'content': """
               <p class="article-lead" style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2rem;">A guide for founders building solo...</p>
 
@@ -6332,121 +6402,71 @@ def build_blog_pages():
             'slug': 'the-death-of-feature-first-messaging',
             'category': 'Technology',
             'tag': 'Essay',
-            'date': 'August 2026',
-            'readTime': '6 min read',
+            'date': 'Coming Soon',
+            'readTime': 'In Progress',
             'title': 'The Death of Feature-First Messaging: How to Position AI Products in 2026',
             'excerpt': 'Why listing parameter counts and latency benchmark numbers fails to convert enterprise buyers, and how leading AI companies structure their narrative around business cognitive leverage.',
-            'content': """
-              <p>For the past three years, the tech industry has been obsessed with model specs: context window sizes, parameter counts, and benchmark evaluations on MMLU. But in 2026, enterprise buyers don't buy model weights—they buy outcome velocity.</p>
-              
-              <h2>1. The Shift From "What It Does" to "What It Unlocks"</h2>
-              <p>When positioning an AI product, feature-level messaging creates friction. An enterprise buyer hearing "We offer a 128k context window multi-agent framework" has to mentally translate that into their P&L statement. When you reframe to "Automate 85% of tier-1 customer underwriting in 12 seconds with audit-grade explainability," the purchasing decision becomes instantaneous.</p>
-
-              <h2>2. The Three Pillars of Modern AI Product Marketing</h2>
-              <ul>
-                <li><strong>Deterministic Safety:</strong> Proving how your AI guarantees boundary control and prevents hallucinations in critical operational paths.</li>
-                <li><strong>Workflow Integration:</strong> Showing that employees don't need to learn a new tool—your AI operates natively where they already live.</li>
-                <li><strong>Time-to-Value (TTV):</strong> Compressing time-to-first-magic from weeks of custom prompt tuning to under 4 minutes of self-serve setup.</li>
-              </ul>
-
-              <h2>3. The Takeaway for Founders &amp; PMMs</h2>
-              <p>Stop marketing technology and start marketing superpowers. The most enduring AI companies are not those with the highest parameter density, but those with the clearest articulation of human leverage.</p>
-            """
+            'is_published': False
         },
         {
             'slug': 'why-most-ai-saas-launches-fail',
             'category': 'Business',
             'tag': 'Research',
-            'date': 'July 2026',
-            'readTime': '8 min read',
+            'date': 'Coming Soon',
+            'readTime': 'In Progress',
             'title': 'Why Most AI SaaS Launches Fail: The Zero-to-One GTM Playbook',
             'excerpt': 'Deconstructing the common pitfalls of AI launches and the exact 5-stage framework to guarantee day-one traction, press coverage, and enterprise pipeline generation.',
-            'content': """
-              <p>Launching an AI product today is louder and more competitive than any previous software cycle. A great product launch is not an announcement—it is the orchestration of an inevitable movement.</p>
-
-              <h2>The 5-Stage Zero-to-One GTM Framework</h2>
-              <p><strong>Stage 1: The Private Alpha Beta-Testing Core.</strong> Limit your first 50 users to high-intent power users who provide daily feedback on friction points.</p>
-              <p><strong>Stage 2: The Provocative Category Manifesto.</strong> Write an essay challenging the status quo of your industry. Don't just launch a tool; launch a perspective.</p>
-              <p><strong>Stage 3: The Interactive Sandbox Playground.</strong> Remove authentication friction. Allow visitors to experience the core value in the browser before asking for an email.</p>
-              <p><strong>Stage 4: Co-Marketing With Design Partners.</strong> Launch alongside 3 recognizable enterprise logos whose quotes validate your ROI.</p>
-              <p><strong>Stage 5: The Multi-Channel Distribution Blitz.</strong> Coordinate Product Hunt, LinkedIn executive thought leadership, niche newsletter sponsorships, and technical deep-dives on the same morning.</p>
-            """
+            'is_published': False
         },
         {
             'slug': 'fintech-licensing-and-regulatory-moats',
             'category': 'Law',
             'tag': 'Research',
-            'date': 'June 2026',
-            'readTime': '7 min read',
+            'date': 'Coming Soon',
+            'readTime': 'In Progress',
             'title': 'Fintech Licensing & Regulatory Moats: A PMM Breakdown of Open Banking',
             'excerpt': 'How regulatory frameworks and compliance structures create defensible go-to-market advantages for emerging financial platforms.',
-            'content': """
-              <p>In heavily regulated environments like African fintech, regulation is often perceived solely as a bottleneck. However, from a product marketing standpoint, compliance is the ultimate trust moat.</p>
-
-              <h2>1. Compliance as Positioning</h2>
-              <p>When selling to institutional partners and enterprises, possessing direct CBN licensing or audited tier-1 payment infrastructure transforms risk-averse buyers into eager adopters. Messaging that emphasizes regulatory certainty beats feature checklists every time.</p>
-
-              <h2>2. The Strategic Value of Open Banking Protocols</h2>
-              <p>With standardized API frameworks emerging across the continent, products that position themselves as connective interoperability layers will capture exponential platform distribution.</p>
-            """
+            'is_published': False
         },
         {
             'slug': 'lessons-from-obviously-awesome',
             'category': 'Books',
             'tag': 'Review',
-            'date': 'May 2026',
-            'readTime': '5 min read',
+            'date': 'Coming Soon',
+            'readTime': 'In Progress',
             'title': 'Lessons from "Obviously Awesome": Finding the Strategic Context That Sells',
             'excerpt': 'Why great products fail when placed in the wrong market category, and how deliberate framing transforms buyer perception.',
-            'content': """
-              <p>April Dunford's classic framework on positioning remains the definitive guide for product marketers. The central insight is simple yet profound: context determines how value is judged.</p>
-
-              <h2>Core Takeaways</h2>
-              <ul>
-                <li><strong>Competitive Alternatives:</strong> What would customers do if your product didn't exist? (Often it is an Excel sheet or manual email).</li>
-                <li><strong>Unique Attributes:</strong> Capabilities you possess that alternatives cannot match.</li>
-                <li><strong>Value to the Customer:</strong> Translating features into measurable business outcomes.</li>
-                <li><strong>Target Customer Segment:</strong> Who cares the most about that specific value?</li>
-                <li><strong>Market Category:</strong> The frame of reference that makes your value obvious.</li>
-              </ul>
-            """
+            'is_published': False
         },
         {
             'slug': 'cognitive-architecture-vs-copywriting',
             'category': 'Ideas',
             'tag': 'Note',
-            'date': 'May 2026',
-            'readTime': '4 min read',
+            'date': 'Coming Soon',
+            'readTime': 'In Progress',
             'title': 'Cognitive Architecture vs. Descriptive Copywriting in Tech',
             'excerpt': 'Product marketing is less about decorative words and more about structuring the mental model a customer uses to navigate choice.',
-            'content': """
-              <p>Descriptive copywriting tells a customer what a product does. Cognitive architecture shapes how a customer thinks about their entire problem space.</p>
-              <p>When you define the problem better than anyone else, the customer instinctively assumes you have the best solution.</p>
-            """
+            'is_published': False
         },
         {
             'slug': 'the-shift-toward-dignity-in-digital-finance',
             'category': 'Culture',
             'tag': 'Essay',
-            'date': 'April 2026',
-            'readTime': '6 min read',
+            'date': 'Coming Soon',
+            'readTime': 'In Progress',
             'title': 'The Shift Toward Dignity in Digital Finance & Consumer Trust',
             'excerpt': 'Exploring how trust exhaustion and predatory friction have reshaped consumer expectations across modern financial products.',
-            'content': """
-              <p>In emerging digital ecosystems, consumer trust is fragile. Products that win long-term are not those with the flashiest growth hacks, but those that treat user agency, transparent pricing, and data privacy with utmost dignity.</p>
-            """
+            'is_published': False
         },
         {
             'slug': 'founder-led-marketing-in-the-early-days',
             'category': 'People',
             'tag': 'Essay',
-            'date': 'March 2026',
-            'readTime': '6 min read',
+            'date': 'Coming Soon',
+            'readTime': 'In Progress',
             'title': 'Founder-Led Marketing: How Early-Stage Teams Win Hearts',
             'excerpt': 'Why early customers buy the founder before they buy the software, and how to harness authentic storytelling before scaling a marketing team.',
-            'content': """
-              <p>Before an early-stage startup has brand recognition or enterprise case studies, its single greatest marketing asset is the founder's conviction. Personal narrative, public learning, and transparent building create an emotional bond that corporate marketing cannot replicate.</p>
-            """
+            'is_published': False
         }
     ]
 
@@ -6495,6 +6515,12 @@ def build_blog_pages():
       <div class="blog-grid-2col">
 """
     for a in articles:
+        is_pub = a.get('is_published', False)
+        footer_link = f"""<a href="/blog/{a['slug']}" class="read-more-link">
+              Full read
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>""" if is_pub else f"""<span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--brand-orange); font-weight: 600;">Coming Soon</span>"""
+
         html_blog += f"""        <article class="blog-static-card" data-category="{a['category']}">
           <div>
             <div class="blog-card-top">
@@ -6505,15 +6531,12 @@ def build_blog_pages():
               <span class="blog-read-time">{a['date']} · {a['readTime']}</span>
             </div>
             <h2 class="blog-card-title">
-              <a href="/blog/{a['slug']}" class="blog-title-link">{a['title']}</a>
+              {f'<a href="/blog/{a["slug"]}" class="blog-title-link">{a["title"]}</a>' if is_pub else f'<span>{a["title"]}</span>'}
             </h2>
             <p class="blog-card-excerpt">{a['excerpt']}</p>
           </div>
           <div class="blog-card-footer">
-            <a href="/blog/{a['slug']}" class="read-more-link">
-              Full read
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-            </a>
+            {footer_link}
           </div>
         </article>
 """
@@ -6529,15 +6552,17 @@ def build_blog_pages():
     with open('blog.html', 'w', encoding='utf-8') as f:
         f.write(html_blog)
 
-    for i, a in enumerate(articles):
+    published_articles = [art for art in articles if art.get('is_published', False)]
+
+    for i, a in enumerate(published_articles):
         h = get_header(active_nav='blog', root_prefix='../', is_homepage=False)
         ft = get_footer(root_prefix='../')
         
-        # Determine 2 next recommended articles
-        next_articles = [articles[(i + 1) % len(articles)], articles[(i + 2) % len(articles)]]
+        # Determine other published articles for Read Next
+        other_published = [art for art in published_articles if art['slug'] != a['slug']]
         
         read_next_cards_html = ""
-        for na in next_articles:
+        for na in other_published:
             read_next_cards_html += f"""          <article class="blog-static-card" data-category="{na['category']}">
             <div>
               <div class="blog-card-top">
@@ -6618,6 +6643,67 @@ def build_blog_pages():
         <div class="blog-grid-2col">
 {read_next_cards_html}        </div>
       </section>
+    </div>
+  </main>
+
+{ft}
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
+"""
+        with open(f"blog/{a['slug']}.html", 'w', encoding='utf-8') as f:
+            f.write(page_html)
+
+    # For placeholder articles that are not published, create clean coming soon pages if anyone accesses the link directly
+    placeholder_articles = [art for art in articles if not art.get('is_published', False)]
+    for a in placeholder_articles:
+        h = get_header(active_nav='blog', root_prefix='../', is_homepage=False)
+        ft = get_footer(root_prefix='../')
+        page_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{a['title']} — Coming Soon</title>
+  <link rel="icon" type="image/png" href="../assets/logo-transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,100,200..800&family=Geist+Mono:wght@400;500;600&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script>
+    (() => {{
+      try {{
+        const t = localStorage.getItem('jd_theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        if (t === 'light') document.documentElement.classList.add('light');
+      }} catch (e) {{}}
+    }})();
+  </script>
+</head>
+<body>
+{h}
+
+  <main class="page-hero">
+    <div class="container">
+      <div>
+        <a href="/blog" class="back-nav-btn">← Back to Subject Matter</a>
+      </div>
+      <div class="blog-card-top" style="max-width: 760px; margin: 0 auto 1.25rem;">
+        <div class="blog-badges-wrap">
+          <span class="blog-category-badge">{a['category']}</span>
+          <span class="blog-format-tag">{a['tag']}</span>
+        </div>
+        <span class="blog-read-time">Coming Soon</span>
+      </div>
+      <h1 class="page-title" style="max-width: 760px; margin: 0 auto 2rem; font-size: clamp(2rem, 4.5vw, 3.25rem);">{a['title']}</h1>
+      
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 4rem 2rem; text-align: center; margin: 2rem auto 4rem; max-width: 720px;">
+        <div style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--brand-orange); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Work In Progress</div>
+        <h2 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;">This piece is currently being drafted.</h2>
+        <p style="color: var(--text-secondary); line-height: 1.7; max-width: 520px; margin: 0 auto 2.5rem;">
+          Jennie is currently researching and writing this article. Check back shortly, or say hi if you'd like to discuss this topic early!
+        </p>
+        <a href="/#contact" class="btn-about-primary" style="display: inline-flex;">Say Hi 👋</a>
+      </div>
     </div>
   </main>
 
