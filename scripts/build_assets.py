@@ -6140,6 +6140,195 @@ def build_blog_pages():
 
     articles = [
         {
+            'slug': 'the-people-who-build-technology-dont-always-understand-the-people-who-use-it',
+            'category': 'Business',
+            'tag': 'Essay',
+            'date': 'August 28, 2026',
+            'readTime': '8 min read',
+            'title': "The People Who Build Technology Don't Always Understand the People Who Use It",
+            'excerpt': "You're a founder who has been living inside your product for six months. You know too much. A guide on getting out of your own head and building for real customer reality.",
+            'content': """
+              <p class="article-lead" style="font-size: 1.15rem; font-style: italic; color: var(--text-secondary); margin-bottom: 2rem;">A guide for founders building solo...</p>
+
+              <p>You're a founder who has been building something for six months. There's a pretty high chance you know exactly what it does. You know why you built it. You have probably explained the idea so many times that you can now explain it while brushing your teeth.</p>
+
+              <p>Now, it's the time of reckoning. You call a friend, seat them in front of your laptop or theirs, and say, <em>“my guy check this out.”</em> They look at the screen. They click around and stop. Then they keep asking you, in a way that starts to make you wonder why you became friends in the first place: <em>"Okay… wait, what am I supposed to do here? Then here?… Okay."</em></p>
+
+              <p>And you are confused.</p>
+
+              <p>Because how could they possibly not know? You just told them. Are they dumb?</p>
+
+              <p>The answer to this is quite simple. <strong>You know too much.</strong></p>
+
+              <p>You have been living inside the product for 6 months. They haven't. And this little difference is responsible for a lot of products in the market that make perfect sense to the person who built them and very little sense to the person who is supposed to use them.</p>
+
+              <p>This is particularly dangerous when you're building alone. Because when you're a solo founder, there may be nobody sitting across the table from you asking uncomfortable questions.</p>
+
+              <p>Nobody says: <em>"Why are we building this?"</em> Nobody asks: <em>"Who actually wants this?"</em> Nobody says: <em>"What evidence do we have?"</em> Nobody says: <em>“Is this necessary?”</em></p>
+
+              <p>You can have a meeting with yourself and everyone in the meeting can agree that your idea is brilliant. It is a very efficient meeting. It is also potentially disastrous. So if you are building a product alone, I want to give you something before you build another feature.</p>
+
+              <div style="background: var(--bg-surface-elevated); border-left: 4px solid var(--brand-orange); padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin: 2rem 0;">
+                <p style="margin: 0; font-weight: 700; font-size: 1.1rem; color: var(--brand-orange);">You need to learn how to get out of your own head.</p>
+              </div>
+
+              <p>You are the founder. You need your vision, no doubt. But you need to make room for something else there too. That is, your customer's reality.</p>
+
+              <h2>Your idea is not the customer's problem</h2>
+              <p>Let's say you wake up tomorrow with an idea. You want to build an app that helps people remember their appointments. You can already see it. A beautiful interface. An appointment log. All the cool stuff. Maybe even little animations when you successfully attend an appointment. You are excited. You start building. You tell your friend. Your friend says: <em>"This is actually so cool."</em> So you feel validated. You build some more and then you tell another person. They also think it's cool. Now you're really cooking.</p>
+
+              <p>Except there is a tiny problem. You have spent all this time validating your solution. You haven't really investigated their problem. This issue sounds small until you realise how much of a difference it makes. Your customer does not wake up thinking: <em>"I need an application with a timer, a reading log and a social voice input."</em> They wake up thinking something more like: <em>"I have forgotten this appointment again. This is not good."</em></p>
+
+              <p>Those are problems. Your application is a proposed answer. And if you're building solo, this is probably one of the first things you need to learn about building products: <strong>Do not fall in love with the answer before you understand the question.</strong></p>
+
+              <p>Steve Blank, who developed the Customer Development methodology, puts this idea rather bluntly: <strong>founders begin with hypotheses about customers, problems and business models, and those hypotheses have to be tested outside the building. He argues that founders should validate the problem and need before assuming that their solution is what people want.</strong></p>
+
+              <h2>You are not your customer</h2>
+              <p>This sounds obvious. It is also one of the easiest things to forget. You might be building a product because you have the problem. That can actually be a very good place to start. You understand the frustration personally and you know what you wish existed. You may even be the first person who uses the product. But eventually, you have to ask yourself a slightly uncomfortable question: <em>Am I building this for people like me, or am I building this for people as I imagine them?</em></p>
+
+              <p>Because those aren't necessarily the same thing.</p>
+
+              <p>Maybe you are a twenty-six-year-old founder who works from a laptop all day, understands technology, downloads new apps for fun and thinks figuring out a new interface is enjoyable.</p>
+
+              <p>Your customer who actually has that problem your app solves might be forty-seven. They might use one business application because their company requires it. They might hate learning new software. They might have no idea what your beautiful little icon means.</p>
+
+              <p>You might think: <em>"They'll figure it out."</em> Maybe. But why should they have to? They have other things to do. You are asking them to spend their time learning your product. They are asking your product to help them with something. Those are two very different relationships.</p>
+
+              <h2>The founder knows the story. The customer sees the thing.</h2>
+              <p>You know that button says "Smart Import." You know why you called it that. You know it imports files. You remember painstakingly that the feature took three weeks to build. You know it is connected to the AI system you spent another two weeks setting up. You know it is one of the most important features in the product.</p>
+
+              <p>The customer sees: Smart Import. And thinks: <em>"What does that mean?"</em> You have context. They have their screen only. This is why founders can sometimes look at a product and think it is obvious. The product is obvious to them. They have been staring at it for months. They have had conversations about it. They have designed it. They have built it. They have fixed it. They have probably complained about it. They know the entire backstory.</p>
+
+              <p>As a founder, always remember that your customer has none of that. They don't know what you intended. They only know what they can see. This is one reason user research and usability testing are useful. Nielsen Norman Group recommends observing real users because watching what people actually do can reveal problems and unmet needs that simply asking people questions may miss.</p>
+
+              <p>And you will develop a new emotion watching someone use your product for the first time. (I laughed while writing this part but I mean it). Like your friend, you might feel like insulting them, but over time you will discover that the thing you thought was obvious is not obvious at all. The thing you thought everyone would love is ignored. The thing you thought was a tiny feature becomes the reason they care.</p>
+
+              <p>Welcome to building for other people.</p>
+
+              <h2>Before you build more, find the people with the problem</h2>
+              <p>Let me teach you a little marketing tactic. First question to ask is: Who actually experiences the problem I am solving?</p>
+
+              <p>And if you are building software for restaurants, don't start with: "Restaurants."</p>
+
+              <p>Which restaurants? Small restaurants? Large chains? Restaurants with delivery? Restaurants with five employees? Restaurants that take orders through WhatsApp? Restaurants that already use POS software? Restaurants in Lagos? Restaurants in London? Restaurants whose biggest problem is inventory? Restaurants whose biggest problem is getting customers?</p>
+
+              <p>The more specific you become, the easier it becomes to understand the person you are actually building for. And you don't need a giant market research department to begin.</p>
+
+              <p>You can talk to people. Yes. People. Terrifying, I know. But if you are building something for humans, you eventually need to meet some humans.</p>
+
+              <h2>Stop asking "Would you use this?”</h2>
+              <p>Please. I'm begging. Do not walk up to someone and say: <em>"I have this amazing app idea. Would you use it?"</em> They will probably say yes. Not necessarily because they are lying. They may genuinely like your idea. Or they may like you. They may want to encourage you. They may not want to be rude. They might have even started imagining a version of your product that is much better than the one you will eventually build. And most importantly, liking an idea is not the same as changing your behaviour for it. We see this all the time as product marketers.</p>
+
+              <p>Instead, ask about what already happened before. Ask:</p>
+              <ul>
+                <li><em>"Tell me about the last time you had this problem."</em></li>
+                <li><em>"What did you do?"</em></li>
+                <li><em>"What are you using right now?"</em></li>
+                <li><em>"How often does this happen?"</em></li>
+                <li><em>"What is the most annoying part?"</em></li>
+                <li><em>"Have you tried anything else?"</em></li>
+                <li><em>"Why did you stop using it?"</em></li>
+                <li><em>"What happens if you don't solve it?"</em></li>
+                <li><em>"How much time does this take you?"</em></li>
+                <li><em>"Have you ever paid for a solution?"</em></li>
+              </ul>
+
+              <p>From experience, I've learned not to disclose your idea while asking all of these questions… at least not at the beginning.</p>
+
+              <p>These questions are boring. That is good. Because boring questions can produce very interesting answers. If someone says: <em>"Yeah, I'd definitely use an app that helps me manage my invoices."</em> That tells you something. If they say: <em>"Last Tuesday I spent three hours going through WhatsApp messages because a customer couldn't find the invoice I sent them six months ago, so I made a spreadsheet to track every invoice."</em> That tells you much more. Now you have behaviour. You have a situation. You have pain. You have a workaround. You have evidence that the problem exists. That is much more useful than <em>"sounds cool."</em></p>
+
+              <h2>Go looking for the workaround</h2>
+              <p>One of my favourite questions for a founder to ask is: <em>"What are you doing today?"</em> Because if your product doesn't exist yet, people are still doing something. They're not sitting around waiting for you to create it.</p>
+
+              <p>Maybe they're doing it badly. Maybe manually. Maybe expensively. Maybe with three different tools. Maybe with a notebook. Maybe with WhatsApp. Maybe with Excel. Maybe with a sticky note on their wall. Maybe they have hired someone. Maybe they have created a ridiculous system that makes sense only to them.</p>
+
+              <p>These workarounds are gold. Because <strong>a workaround is evidence that someone is trying to solve a problem.</strong></p>
+
+              <p>Imagine you want to build a tool for freelancers to track payments. You ask someone how they do it. They tell you: <em>"I have a Google Sheet, then I check my bank statement, then I message clients on WhatsApp if they're late."</em> Now you're learning something. You can ask: <em>"How often do you do that?" "How long does it take?" "What happens when you miss one?" "Why didn't you keep using it?"</em></p>
+
+              <p>Suddenly you're not designing from your imagination anymore. You're designing from someone's actual life.</p>
+
+              <h2>Find the people who have the problem badly</h2>
+              <p>Not everybody with a problem is a customer. I say it again: Not… Everybody… With… A… Problem… Is… A… Customer.</p>
+
+              <p>Someone might say: <em>"Yeah, it would be nice if that were easier."</em> And then continue living exactly as they are. That's different from: <em>"I hate doing this every week. I've tried three things and none of them work."</em> You must notice the difference between the two. The second person has given you something important. Evidence of pain. And pain comes in different forms:</p>
+              <ul>
+                <li>It can cost money.</li>
+                <li>It can cost time.</li>
+                <li>It can create stress or embarrassment.</li>
+                <li>It can make someone look incompetent.</li>
+                <li>It can make something unnecessarily difficult.</li>
+                <li>It can prevent someone from doing something they really want to do.</li>
+                <li>It can simply annoy them every single Tuesday.</li>
+              </ul>
+
+              <p>You need to find a problem that matters enough for someone to do something about it. How important is this problem in their actual life?</p>
+
+              <h2>You don't need everyone</h2>
+              <p>This is another place where founders get themselves into trouble. You have an idea for a product. You ask: <em>"Who is my target audience?"</em> And the answer somehow becomes: <em>"Everyone."</em> Everyone who uses a phone. Everyone who reads. Everyone who owns a business. Please. Everyone is a very large group. And when you try to build for everyone, you end up making decisions for nobody in particular.</p>
+
+              <p>You don't need everyone to care before your product can make it in the market. You need the right people to care enough. Maybe your first ten customers all have something in common that you didn't expect. Maybe they're all freelancers. Maybe they're all mothers. That pattern gives you somewhere to look.</p>
+
+              <h2>Ask what "better" actually means</h2>
+              <p>This is where your product can start taking shape. Imagine you're building a budgeting app. You think: <em>"People need AI-powered financial insights."</em> Sounds impressive. Then you talk to customers. And they say: <em>"I don't know where my money goes."</em> That is different. You ask more questions. They say: <em>"I get paid, I pay my bills, I buy things throughout the month and then somehow I'm broke before payday."</em> Now you understand the situation better.</p>
+
+              <p>Maybe they don't need an AI financial analyst. Maybe they need a very simple way to see where their money went. The customer doesn't care that you can build a sophisticated model. They care that they stop wondering where ₦200,000 disappeared to. (honestly, if it was me, I'd care too).</p>
+
+              <p>But this is why product decisions should eventually connect back to customer outcomes. Harvard Business Review has made a similar argument before in its work on "jobs to be done": companies can collect plenty of customer information and still miss the underlying reason people choose one solution over another.</p>
+
+              <p>Understanding the job a customer is trying to accomplish helps connect product development to what actually matters to them. Your customer may ask for a feature. But underneath that feature is often a desired outcome. Your job is to find it.</p>
+
+              <h2>Your customer is not your product designer</h2>
+              <p>Now, before I make you go interview twenty people and then build exactly what they tell you, let me stop myself. <strong>Customers are not always good at designing the solution.</strong> They know their lives. They know their problems. That's about all of it. That doesn't mean they know the best technology to solve it. If you ask: <em>"What should we build?"</em> you may get: <em>"An app." "AI." "A dashboard." "A WhatsApp bot." "A button here."</em></p>
+
+              <p>Interesting. But don't immediately start coding. Ask why.</p>
+
+              <p>If someone says they need dark mode. Why? <em>"Because I use the product at night and the white screen hurts my eyes."</em> Now you know something. The feature request was dark mode. The need was comfortable nighttime use. You have more freedom than you thought. Maybe dark mode is the right answer. Maybe it isn't. The customer gave you the problem. You still have to design the solution.</p>
+
+              <h2>Watch people use the thing</h2>
+              <p>Eventually, you need to stop talking about the product and put it in front of someone. This is where things get very interesting. Give someone the prototype you built. Don't explain everything. Don't sit there saying: <em>"Okay, this button is for..."</em> If you do so, you're cheating. Let them use it. And watch how they use it. Where do they click? What do they ignore? What do they try to do that your product doesn't allow? What do they do completely differently from what you expected?</p>
+
+              <p>You may feel an overwhelming urge to rescue them. Don't. Your customer will not always have you sitting beside them whispering: <em>"No no, click the little thing on the left."</em> If your product needs you there to explain how it works, that is useful information.</p>
+
+              <p>Nielsen Norman Group recommends early and repeated testing with real users to uncover usability problems, and distinguishes this from simply asking users for opinions about a design.</p>
+
+              <p>The person struggling with your prototype is not failing your test. Your prototype is being tested.</p>
+
+              <h2>Keep talking to customers after you launch</h2>
+              <p>Customer research isn't a pre-launch ceremony. You don't interview ten people, launch the product and announce: <em>"Okay, my work here is done."</em></p>
+
+              <p>Your customers are going to keep teaching you. They will tell you where they get confused, what they expected, what they love, what they hate, what they don't use, what they hacked around, what they wish existed, why they left, and why they came back.</p>
+
+              <p>Customer support is research. Reviews are research. Churn interviews are research. Sales calls are research. Usability tests are research. Watching someone use your product is research.</p>
+
+              <p>The entire business can become a learning system if you pay attention.</p>
+
+              <p>But what if customers disagree? They will. One person wants dark mode. Another doesn't care. One person wants AI. Another thinks AI is unnecessary. One wants a cheaper plan. Another wants more features. One says your onboarding is too long. Another says it isn't detailed enough.</p>
+
+              <p>Congratulations. You have customers. Now you have to think.</p>
+
+              <p>Your job is not to make every customer happy individually. Your job is to identify patterns and make decisions. Maybe one request belongs to a niche. Maybe another is a loud opinion from one person. Maybe five people are describing the same problem in completely different words. That's where your judgement matters. Remember that customer research gives you evidence. It does not remove the need for thinking.</p>
+
+              <h2>Marketing is already happening</h2>
+              <p>If you have been thinking: <em>"I'll deal with marketing when the product is finished,"</em> I have bad news. You have already been doing marketing. You just didn't call it that.</p>
+
+              <p>When you decided who the product is for, that's marketing. When you figured out what problem matters most to them, that's marketing. When you tried to understand how they describe the problem, that's marketing. When you decided which benefit to communicate, that's marketing. When you figured out why they should choose you instead of what they're using now, that's marketing. When you decided what your product should be known for, that's marketing. It's all marketing and more marketing.</p>
+
+              <p>Marketing isn't the Instagram post you make after the product is finished. That post is one tiny piece of it.</p>
+
+              <h2>Your job is not to be right</h2>
+              <p>I think this is probably the hardest lesson for a founder. You believed in your idea enough to start. That belief is useful. You need some stubbornness to build anything. But there is a difference between being committed to the mission and being committed to every assumption you made about it. You can say: <em>"I believe this problem matters,"</em> and still say: <em>"I was wrong about how people solve it."</em> It's not a win-lose situation.</p>
+
+              <p>Steve Blank describes the process as having "strong beliefs" that are validated or modified by evidence gathered outside the building. I like that. Strong beliefs. Loose enough hands to change them.</p>
+
+              <p>And finally, as a founder, you need to be willing to leave the comfortable little room in your head where your product makes perfect sense and go find out what happens when another person touches it. Because the person who builds the technology will always know something the person using it doesn't. They can't know more about the product than you. You can't know more about their problems than them.</p>
+
+              <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-subtle); color: var(--text-secondary); font-style: italic;">
+                <p>Alright! This is the end. In this piece, I've tried to sum up all points I know about building a product and the importance of knowing your customer while you're at it. I hope you enjoyed it! Say hi if you did!</p>
+              </div>
+            """
+        },
+        {
             'slug': 'the-death-of-feature-first-messaging',
             'category': 'Technology',
             'tag': 'Essay',
